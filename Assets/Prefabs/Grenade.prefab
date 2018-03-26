@@ -76,8 +76,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1337632090844708}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.827, y: 1.3142871, z: -0.16435148}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.18300003, y: 0.47899997, z: -0.06699997}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4656248598737866}
@@ -245,8 +245,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35abf4594513fa54aa5ee23026013b65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosionSound: {fileID: 8300000, guid: 2ac63c6e431d40f458db0a4d188067f0, type: 3}
-  timer: 3
+  explosionSound: {fileID: 8300000, guid: 84fc49437bbcf434d8c69f55d6112d39, type: 3}
+  fuseTimer: 3
   radius: 10
   explosionForce: 350
   grenade: {fileID: 1337632090844708}

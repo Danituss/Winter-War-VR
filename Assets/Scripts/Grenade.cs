@@ -1,40 +1,41 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Diagnostics;
 
 public class Grenade : MonoBehaviour {
+
     public AudioClip explosionSound;
-    public float timer;
+
+    public float fuseTimer;
+
     public float radius;
     public float explosionForce;
-
-    bool timerStart = false;
-    public GameObject grenade;
-    public GameObject explosionEffect; 
     
+    public GameObject grenade;
+    public GameObject explosionEffect;
+
+    Stopwatch fuse;
 
     void Start()
     {
-        
+        fuse = new Stopwatch();
     }
-	void Update () {
-        if (timerStart == true)
+
+	void Update ()
+    {
+        if (fuse.IsRunning && fuse.ElapsedMilliseconds >= fuseTimer * 1000f)
         {
-            timer -= Time.deltaTime;
-        }
-        if (timer <= 0)
-        {
-            Explosion();
-            timerStart = false;
-            
-        }
-		
+            Explosion();     
+        }		
 	}
+
     // When the pin is pulled
     void OnJointBreak()
     {
-        timerStart = true;
+        fuse.Start();
     }
+
     // grenade explosion
     void Explosion()
     {
@@ -52,7 +53,5 @@ public class Grenade : MonoBehaviour {
             }
         }
         Destroy(grenade);
-
-    }
-    
+    }    
 }
