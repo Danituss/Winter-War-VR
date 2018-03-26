@@ -466,6 +466,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   iAmTarget: {fileID: 1455693080767990}
   rotator: {fileID: 1020755605483150}
+  shotDown: 0
+  speed: 25
 --- !u!136 &136385690269942954
 CapsuleCollider:
   m_ObjectHideFlags: 1
