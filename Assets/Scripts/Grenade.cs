@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Diagnostics;
 
-public class Grenade : MonoBehaviour {
+public class Grenade : MonoBehaviour
+{
 
     public AudioClip explosionSound;
 
@@ -11,7 +12,7 @@ public class Grenade : MonoBehaviour {
 
     public float radius;
     public float explosionForce;
-    
+
     public GameObject grenade;
     public GameObject explosionEffect;
 
@@ -22,13 +23,15 @@ public class Grenade : MonoBehaviour {
         fuse = new Stopwatch();
     }
 
-	void Update ()
+    void Update()
     {
         if (fuse.IsRunning && fuse.ElapsedMilliseconds >= fuseTimer * 1000f)
         {
-            Explosion();     
-        }		
-	}
+            Explosion();
+            
+        }
+        
+    }
 
     // When the pin is pulled
     void OnJointBreak()
@@ -42,16 +45,26 @@ public class Grenade : MonoBehaviour {
         AudioSource.PlayClipAtPoint(explosionSound, transform.position);
         Instantiate(explosionEffect, transform.position, transform.rotation);
 
-       Collider[] colliders = Physics.OverlapSphere(transform.position, radius);
 
-        foreach(Collider nearbyObject in colliders)
+
+        foreach (Collider nearbyObject in Physics.OverlapSphere(transform.position, radius))
         {
-            Rigidbody rb = nearbyObject.GetComponent<Rigidbody>();
-            if (rb != null)
+            if (nearbyObject.GetComponent<Rigidbody>() != null)
             {
-                rb.AddExplosionForce(explosionForce, transform.position, radius);
+                RaycastHit hit;
+                if (Physics.Raycast(transform.position, nearbyObject.transform.position - transform.position, out hit))
+                {
+                    nearbyObject.GetComponent<Rigidbody>().AddExplosionForce(explosionForce, transform.position, radius);
+                    Target target = hit.transform.GetComponent<Target>();
+                    if (target != null)
+                    {
+                        float distance = Vector3.Distance(target.transform.position, transform.position);
+                        target.TakeDamage(radius-distance);
+                    }
+                }
+
             }
+            Destroy(grenade);
         }
-        Destroy(grenade);
-    }    
+    }
 }
