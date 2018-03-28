@@ -28,7 +28,9 @@ public class Grenade : MonoBehaviour
         if (fuse.IsRunning && fuse.ElapsedMilliseconds >= fuseTimer * 1000f)
         {
             Explosion();
+            
         }
+        
     }
 
     // When the pin is pulled
@@ -53,6 +55,12 @@ public class Grenade : MonoBehaviour
                 if (Physics.Raycast(transform.position, nearbyObject.transform.position - transform.position, out hit))
                 {
                     nearbyObject.GetComponent<Rigidbody>().AddExplosionForce(explosionForce, transform.position, radius);
+                    Target target = hit.transform.GetComponent<Target>();
+                    if (target != null)
+                    {
+                        float distance = Vector3.Distance(target.transform.position, transform.position);
+                        target.TakeDamage(radius-distance);
+                    }
                 }
 
             }
