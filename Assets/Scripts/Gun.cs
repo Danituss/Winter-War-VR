@@ -36,6 +36,7 @@
 			cocked = true;
         }
 
+        AudioClip iceImpactSound;
             // when the fire button is pressed the gun shoots a raycast and looks if it hit a target that can be damaged
          void FireBullet()
         {
@@ -52,7 +53,23 @@
                 {
                     target.TakeDamage(damage);
                 }
-            }
+
+                AudioClip hitAudio;
+                PhysicalMaterial mat = hit.transform.GetComponent<PhysicalMaterial>();
+                switch (mat.material) {
+                    case PhysicalMaterial.physMaterial.ice:
+                        hitAudio = iceImpactSound;
+                        break;
+
+                }
+
+                GameObject go = new GameObject("hit");
+                go.transform.position = hit.transform.position;
+                /*
+                go.AddComponent<HitSoundPlayer>();
+                go.GetComponent<HitSoundPlayer>().PlaySound(hitAudio);
+                */
+               }
         }
     }
 }
