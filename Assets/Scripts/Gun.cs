@@ -39,8 +39,7 @@
 			//clipCurrent = clipSize;
 			cocked = true;
         }
-
-        AudioClip iceImpactSound;
+        
             // when the fire button is pressed the gun shoots a raycast and looks if it hit a target that can be damaged
          void FireBullet()
         {
@@ -60,8 +59,7 @@
                 {
                     target.TakeDamage(damage);
                 }
-
-                AudioClip hitAudio;
+                
                 PhysicalMaterial mat = hit.transform.GetComponent<PhysicalMaterial>();
 
                 GameObject go = new GameObject("hit");

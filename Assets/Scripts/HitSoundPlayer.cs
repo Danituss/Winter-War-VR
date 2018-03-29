@@ -19,12 +19,27 @@ public class HitSoundPlayer : MonoBehaviour {
         }
 	}
 
-    public void PlaySound(PhysicalMaterial.physMaterial mat, AudioClip a, AudioClip b, AudioClip c, AudioClip d, AudioClip e, AudioClip f) 
+    public void PlaySound(PhysicalMaterial.physMaterial mat, AudioClip fallback, AudioClip stone, AudioClip ice, AudioClip flesh, AudioClip metal, AudioClip wood) 
     {
-        switch (mat.material) 
+        switch (mat) 
         {
-            case PhysicalMaterial.physMaterial.fallback:
-                audioSource.clip = a;
+           case PhysicalMaterial.physMaterial.flesh:
+                audioSource.clip = flesh;
+                break;
+            case PhysicalMaterial.physMaterial.ice:
+                audioSource.clip = ice;
+                break;
+            case PhysicalMaterial.physMaterial.metal:
+                audioSource.clip = metal;
+                break;
+            case PhysicalMaterial.physMaterial.stone:
+                audioSource.clip = stone;
+                break;
+            case PhysicalMaterial.physMaterial.wood:
+                audioSource.clip = wood;
+                break;
+            default:
+                audioSource.clip = fallback;
                 break;
         }
 
