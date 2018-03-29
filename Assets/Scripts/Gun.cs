@@ -4,11 +4,14 @@
 
     public class Gun : VRTK_InteractableObject
     {
+        [Range(0,50)]
         public float damage = 10f;
 		public float pushForce;
 		public GameObject barrel;
 		public GameObject muzzleLight;
 		public ParticleSystem particle;
+
+        public AudioClip fallbackClip, stoneClip, iceClip, fleshClip, metalClip, woodClip;
 
 		//public int clipSize;
 		//int clipCurrent;
@@ -60,19 +63,12 @@
 
                 AudioClip hitAudio;
                 PhysicalMaterial mat = hit.transform.GetComponent<PhysicalMaterial>();
-                /*switch (mat.material) {
-                    case PhysicalMaterial.physMaterial.ice:
-                        hitAudio = iceImpactSound;
-                        break;
-
-                }*/
 
                 GameObject go = new GameObject("hit");
                 go.transform.position = hit.transform.position;
-                /*
+
                 go.AddComponent<HitSoundPlayer>();
-                go.GetComponent<HitSoundPlayer>().PlaySound(hitAudio);
-                */
+                go.GetComponent<HitSoundPlayer>().PlaySound(mat.material, fallbackClip, stoneClip, iceClip, fleshClip, metalClip, woodClip);
                }
         }
     }
