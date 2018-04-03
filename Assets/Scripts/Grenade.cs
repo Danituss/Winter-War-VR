@@ -43,22 +43,22 @@ public class Grenade : MonoBehaviour
     void Explosion()
     {
         AudioSource.PlayClipAtPoint(explosionSound, transform.position);
-        Instantiate(explosionEffect, transform.position, transform.rotation);
+        Instantiate(explosionEffect, grenade.transform.position, grenade.transform.rotation);
 
 
 
-        foreach (Collider nearbyObject in Physics.OverlapSphere(transform.position, radius))
+		foreach (Collider nearbyObject in Physics.OverlapSphere(grenade.transform.position, radius))
         {
             if (nearbyObject.GetComponent<Rigidbody>() != null)
             {
                 RaycastHit hit;
-                if (Physics.Raycast(transform.position, nearbyObject.transform.position - transform.position, out hit))
+				if (Physics.Raycast(grenade.transform.position, nearbyObject.transform.position - grenade.transform.position, out hit))
                 {
-                    nearbyObject.GetComponent<Rigidbody>().AddExplosionForce(explosionForce, transform.position, radius);
+					nearbyObject.GetComponent<Rigidbody>().AddExplosionForce(explosionForce, grenade.transform.position, radius);
                     Target target = hit.transform.GetComponent<Target>();
                     if (target != null)
                     {
-                        float distance = Vector3.Distance(target.transform.position, transform.position);
+						float distance = Vector3.Distance(target.transform.position, grenade.transform.position);
                         target.TakeDamage(radius-distance);
                     }
                 }

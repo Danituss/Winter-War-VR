@@ -534,7 +534,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.0005, y: 0.0003, z: 0.0005}
+  m_Size: {x: 0.0007, y: 0.0004, z: 0.0006}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &65689369059049398
 BoxCollider:
@@ -605,10 +605,10 @@ MonoBehaviour:
   rightSnapHandle: {fileID: 0}
   leftSnapHandle: {fileID: 0}
   throwVelocityWithAttachDistance: 0
-  throwMultiplier: 1
-  onGrabCollisionDelay: 0
+  throwMultiplier: 1.8
+  onGrabCollisionDelay: 1
   destroyImmediatelyOnThrow: 1
-  breakForce: 1500
+  breakForce: 5000
 --- !u!114 &114855958210039608
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -651,9 +651,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosionSound: {fileID: 8300000, guid: 2ac63c6e431d40f458db0a4d188067f0, type: 3}
-  fuseTimer: 3
+  fuseTimer: 5
   radius: 10
-  explosionForce: 100
+  explosionForce: 200
   grenade: {fileID: 1337632090844708}
   explosionEffect: {fileID: 1953731144569882, guid: 7a49e7b51e804534c8657bb21d7f2207,
     type: 2}
@@ -690,7 +690,7 @@ FixedJoint:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1024749949493224}
   m_ConnectedBody: {fileID: 54800041432326630}
-  m_BreakForce: 100
+  m_BreakForce: 1000
   m_BreakTorque: Infinity
   m_EnableCollision: 0
   m_EnablePreprocessing: 1
