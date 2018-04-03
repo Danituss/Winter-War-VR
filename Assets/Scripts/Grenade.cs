@@ -12,6 +12,7 @@ public class Grenade : MonoBehaviour
 
     public float radius;
     public float explosionForce;
+	public float damage;
 
     public GameObject grenade;
     public GameObject explosionEffect;
@@ -43,7 +44,8 @@ public class Grenade : MonoBehaviour
     void Explosion()
     {
         AudioSource.PlayClipAtPoint(explosionSound, transform.position);
-        Instantiate(explosionEffect, grenade.transform.position, grenade.transform.rotation);
+		GameObject clone = Instantiate(explosionEffect, grenade.transform.position, grenade.transform.rotation);
+		Destroy (clone, 2);
 
 
 
@@ -54,12 +56,13 @@ public class Grenade : MonoBehaviour
                 RaycastHit hit;
 				if (Physics.Raycast(grenade.transform.position, nearbyObject.transform.position - grenade.transform.position, out hit))
                 {
-					nearbyObject.GetComponent<Rigidbody>().AddExplosionForce(explosionForce, grenade.transform.position, radius);
+					if (hit.collider == nearbyObject)
+						nearbyObject.GetComponent<Rigidbody>().AddExplosionForce(explosionForce, grenade.transform.position, radius);
                     Target target = hit.transform.GetComponent<Target>();
                     if (target != null)
                     {
 						float distance = Vector3.Distance(target.transform.position, grenade.transform.position);
-                        target.TakeDamage(radius-distance);
+						target.TakeDamage((radius-distance)*damage);
                     }
                 }
 

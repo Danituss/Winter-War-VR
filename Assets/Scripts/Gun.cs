@@ -53,7 +53,7 @@
                 Debug.Log(hit.transform.name);
                 Target target = hit.transform.GetComponent<Target>();
 				if (hit.rigidbody){
-					hit.rigidbody.AddForce (Vector3.forward * pushForce, ForceMode.Impulse);
+					hit.rigidbody.AddForce (gameObject.transform.forward * pushForce, ForceMode.Impulse);
 						}
                 if (target != null)
                 {
