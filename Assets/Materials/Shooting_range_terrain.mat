@@ -6,7 +6,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: New Material
+  m_Name: Shooting_range_terrain
   m_Shader: {fileID: 4800000, guid: 1bf808b2d5eddaf45b7a147e00e44fc6, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
