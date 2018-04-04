@@ -219,7 +219,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1337632090844708}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.91365916, y: 1.5341825, z: 1.3590536}
+  m_LocalPosition: {x: 0.8439999, y: 1.5341825, z: 1.4749999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4945348987966898}
@@ -698,7 +698,7 @@ MonoBehaviour:
   explosionForce: 500
   damage: 6
   grenade: {fileID: 1077922706493420}
-  explosionEffect: {fileID: 1953731144569882, guid: 7a49e7b51e804534c8657bb21d7f2207,
+  explosionEffect: {fileID: 1049009931013108, guid: 37809e5760ad14c10b7bc024adae9a07,
     type: 2}
 --- !u!136 &136014996357466560
 CapsuleCollider:
