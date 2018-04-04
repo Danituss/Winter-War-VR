@@ -11,19 +11,19 @@ public class Player : MonoBehaviour {
     float maxHp;
     
 
-	// Use this for initialization
+	
 	void Start () {
         dmgOverlay.canvasRenderer.SetAlpha(dmgTaken);
         maxHp = healthCheck.health;
 		
 	}
 	
-	// Update is called once per frame
+	// Image in front of player get more red the more damage the player takes.
 	void Update () {
+      
+            dmgTaken = 1 - (healthCheck.health / maxHp);
         
-        dmgTaken = 1 - (healthCheck.health / maxHp);
-        Debug.Log(dmgTaken);
-        dmgOverlay.canvasRenderer.SetAlpha(dmgTaken);
+        dmgOverlay.canvasRenderer.SetAlpha(dmgTaken-0.05f);
 
 
 

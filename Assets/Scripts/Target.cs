@@ -6,6 +6,7 @@ public class Target : MonoBehaviour
 {
 
     public float health = 50f;
+    
 
 
     // when an object with health gets damaged
@@ -15,12 +16,20 @@ public class Target : MonoBehaviour
 
         if (health <= 0)
         {
+            health = 0;
             Die();
         }
     }
     // when an object with health reaches 0 hitpoints
     void Die()
     {
-        Destroy(gameObject);
+        if (gameObject.tag == "player")
+        {
+
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 }
