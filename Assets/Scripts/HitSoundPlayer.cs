@@ -10,12 +10,14 @@ public class HitSoundPlayer : MonoBehaviour {
 	void Awake () {
         gameObject.AddComponent<AudioSource>();
         audioSource = GetComponent<AudioSource>();
+
+        audioSource.spatialBlend = 1.0f; //Makes the audio 3D
 	}
 	
 	// Update is called once per frame
 	void Update () {
         if (!audioSource.isPlaying && audioSource.clip != null) {
-            Destroy(this);
+            Destroy(gameObject);
         }
 	}
 
