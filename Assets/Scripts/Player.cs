@@ -1,31 +1,42 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+
 
 public class Player : MonoBehaviour {
-
-    public Image dmgOverlay;
+    
+    public Texture dmgOverlay;
     float dmgTaken = 0f;
     public Target healthCheck;
     float maxHp;
-    
+    private Color guiColor;
 
-	
+	/// <summary>
+    /// 
+    /// </summary>
 	void Start () {
-        dmgOverlay.canvasRenderer.SetAlpha(dmgTaken);
-        maxHp = healthCheck.health;
-		
-	}
-	
-	// Image in front of player get more red the more damage the player takes.
-	void Update () {
-      
-            dmgTaken = 1 - (healthCheck.health / maxHp);
         
-        dmgOverlay.canvasRenderer.SetAlpha(dmgTaken-0.05f);
+        maxHp = healthCheck.health;
+        guiColor = Color.white;
 
+    }
+	
+	// GUI Texture darkens as the player takes more damage
+	void Update () {
+        guiColor.a = dmgTaken - 0.1f;
+        dmgTaken = 1 - (healthCheck.health / maxHp);
+        
+        
 
-
+        
+    }
+    /// <summary>
+    /// draws the damageTexture
+    /// </summary>
+    void OnGUI()
+    {
+        GUI.color = guiColor;
+        GUI.DrawTexture(new Rect(0, 0,Screen.width, Screen.height), dmgOverlay);
+        
     }
 }
