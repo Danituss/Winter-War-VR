@@ -29,6 +29,10 @@ ModelImporter:
     4300002: Cylinder.002
     4300004: Cylinder.001
     4300006: Cylinder
+    6400000: Cylinder
+    6400002: Cylinder.001
+    6400004: Cylinder.002
+    6400006: Torus
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -61,7 +65,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1
