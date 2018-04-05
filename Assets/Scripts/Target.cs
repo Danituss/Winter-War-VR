@@ -6,7 +6,7 @@ public class Target : MonoBehaviour
 {
 
     public float health;
-    float maxHP;
+    public float maxHP;
     
     void Start()
     {

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Healing : MonoBehaviour {
+    public float healingLeft;
     
 	// Use this for initialization
 	void Start () {
@@ -19,15 +20,16 @@ public class Healing : MonoBehaviour {
     
     void OnTriggerStay(Collider col)
     {
-       
         
-        if(col.gameObject.tag == "player")
+        
+        if(col.gameObject.tag == "player" && healingLeft > 0)
         {
-            
             Target targetToHeal = col.gameObject.GetComponent<Target>();
-
-            targetToHeal.health++;
-            
+            if (targetToHeal.health < targetToHeal.maxHP)
+            {
+                healingLeft -= 0.2f;
+                targetToHeal.health += 0.2f;
+            }
         }
     }
 }
