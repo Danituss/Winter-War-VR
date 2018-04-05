@@ -23,7 +23,7 @@ public class Target : MonoBehaviour
     public void TakeDamage(float amount)
     {
         health -= amount;
-
+		gameObject.GetComponent<Renderer> ().material.color = Color.Lerp (Color.green, Color.red, health / maxHP);
         if (health <= 0)
         {
             health = 0;

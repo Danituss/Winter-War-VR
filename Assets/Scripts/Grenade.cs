@@ -47,7 +47,8 @@
         // grenade explosion
         void Explosion()
         {
-            AudioSource.PlayClipAtPoint(explosionSound, transform.position);
+
+            AudioSource.PlayClipAtPoint(explosionSound, transform.position, 1f);
             GameObject clone = Instantiate(explosionEffect, grenade.transform.position, grenade.transform.rotation);
             Destroy(clone, 2);
 

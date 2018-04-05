@@ -256,8 +256,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1917096496534048}
-  m_LocalRotation: {x: -0.29104784, y: 0.2910479, z: -0.6444308, w: 0.6444309}
-  m_LocalPosition: {x: -20.336628, y: 0.269, z: -3.4756}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -20.309, y: 0.392, z: -3.3240001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4157232978423364}
@@ -484,7 +484,7 @@ HingeJoint:
   m_Anchor: {x: 0.00014, y: 0, z: 0}
   m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.0002589369, y: 2.3283107e-12, z: 0.000011764727}
+  m_ConnectedAnchor: {x: -0.00025893847, y: 2.3283107e-12, z: 0.000011761373}
   m_UseSpring: 0
   m_Spring:
     spring: 0
@@ -518,7 +518,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.00031066893, y: 0.00003411862, z: 0.00031066887}
+  m_Size: {x: 0.0006106689, y: 0.0006411862, z: 0.0006106689}
   m_Center: {x: -4.656613e-10, y: 9.313226e-10, z: 0}
 --- !u!65 &65097027977619566
 BoxCollider:
@@ -589,7 +589,7 @@ MonoBehaviour:
   rightSnapHandle: {fileID: 0}
   leftSnapHandle: {fileID: 0}
   throwVelocityWithAttachDistance: 0
-  throwMultiplier: 1.6
+  throwMultiplier: 2
   onGrabCollisionDelay: 1
   destroyImmediatelyOnThrow: 1
   breakForce: 5000
@@ -648,9 +648,9 @@ MonoBehaviour:
   allowedUseControllers: 0
   usingState: 0
   explosionSound: {fileID: 8300000, guid: 2ac63c6e431d40f458db0a4d188067f0, type: 3}
-  fuseTimer: 3
-  radius: 10
-  explosionForce: 500
+  fuseTimer: 5
+  radius: 12
+  explosionForce: 300
   damage: 6
   grenade: {fileID: 1755526438509676}
   explosionEffect: {fileID: 1049009931013108, guid: 37809e5760ad14c10b7bc024adae9a07,

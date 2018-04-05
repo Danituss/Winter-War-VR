@@ -10,6 +10,7 @@
 		public GameObject barrel;
 		public GameObject muzzleLight;
 		public ParticleSystem particle;
+		private AudioSource audioSource;
 
         public AudioClip fallbackClip, stoneClip, iceClip, fleshClip, metalClip, woodClip;
 
@@ -18,9 +19,6 @@
 
 		// True if weapon is ready to be fired 
 		bool cocked;
-
-		// Sounds
-		public AudioClip fire;
 
 		// Ei lataus ääniä?
 		//public AudioClip reload;
@@ -38,13 +36,19 @@
         {
 			//clipCurrent = clipSize;
 			cocked = true;
+			audioSource = GetComponent<AudioSource>();
         }
         
             // when the fire button is pressed the gun shoots a raycast and looks if it hit a target that can be damaged
          void FireBullet()
         {
+			SteamVR_Controller.Input((int)SteamVR_TrackedObject.EIndex.Device1).TriggerHapticPulse(500);
+			SteamVR_Controller.Input((int)SteamVR_TrackedObject.EIndex.Device2).TriggerHapticPulse(500);
+
+
 			particle.Play ();
 			muzzleLight.SetActive (true);
+			audioSource.Play();
 			//clipCurrent -= 1;
 			//cocked = false;
             RaycastHit hit;
