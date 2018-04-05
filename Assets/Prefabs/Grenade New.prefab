@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 33812479810518392}
   - component: {fileID: 23958077737812618}
   - component: {fileID: 54542477385648166}
+  - component: {fileID: 114533736916119934}
   m_Layer: 0
   m_Name: Pin stick
   m_TagString: Untagged
@@ -112,7 +113,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4554590162769860}
-  - component: {fileID: 65425304565287136}
   m_Layer: 0
   m_Name: Pin
   m_TagString: Untagged
@@ -145,6 +145,7 @@ GameObject:
   - component: {fileID: 4235124466704210}
   - component: {fileID: 33242702076910338}
   - component: {fileID: 23566534953292344}
+  - component: {fileID: 114567647023587694}
   m_Layer: 0
   m_Name: Body
   m_TagString: Untagged
@@ -255,8 +256,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1917096496534048}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -20.309, y: 0.392, z: -3.3240001}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -17.805, y: 0.392, z: -3.3240001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4157232978423364}
@@ -324,7 +325,7 @@ MeshRenderer:
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
   m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 3
+  m_SelectedEditorRenderState: 2
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -392,7 +393,7 @@ MeshRenderer:
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
   m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 3
+  m_SelectedEditorRenderState: 2
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -436,13 +437,13 @@ Rigidbody:
   m_GameObject: {fileID: 1755526438509676}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 0.05
-  m_AngularDrag: 0.15
+  m_Drag: 1
+  m_AngularDrag: 1.5
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 2
+  m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 2
+  m_CollisionDetection: 0
 --- !u!54 &54542477385648166
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -483,7 +484,7 @@ HingeJoint:
   m_Anchor: {x: 0.00014, y: 0, z: 0}
   m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.00025894074, y: -4.4470735e-10, z: 0.000011761169}
+  m_ConnectedAnchor: {x: -0.00025893527, y: 2.2584613e-10, z: 0.000011762659}
   m_UseSpring: 0
   m_Spring:
     spring: 0
@@ -514,7 +515,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1426543760869166}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.00031066893, y: 0.00003411862, z: 0.00031066887}
@@ -529,20 +530,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.062, y: 0.01, z: 0.062}
+  m_Size: {x: 0.05, y: 0.01, z: 0.05}
   m_Center: {x: -0.015, y: -0.17, z: 0.08}
---- !u!65 &65425304565287136
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1812031385079340}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Size: {x: 0.0005, y: 0.0003, z: 0.0004}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &65972583673704438
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -604,6 +593,30 @@ MonoBehaviour:
   onGrabCollisionDelay: 1
   destroyImmediatelyOnThrow: 1
   breakForce: 5000
+--- !u!114 &114533736916119934
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1438236968636842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23fa698560b688845bf08bafe6dc1b28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AdditionalVertexStreamMesh: {fileID: 0}
+--- !u!114 &114567647023587694
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1995692425457444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23fa698560b688845bf08bafe6dc1b28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AdditionalVertexStreamMesh: {fileID: 0}
 --- !u!114 &114909042617235746
 MonoBehaviour:
   m_ObjectHideFlags: 1
