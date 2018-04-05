@@ -1,36 +1,20 @@
 fileFormatVersion: 2
-guid: d2d0cfe0dddd7344185af363438e6123
-timeCreated: 1522748080
-licenseType: Free
+guid: f781eb3eeac8e4f42844760fc3eefc1a
+timeCreated: 1522931476
+licenseType: Pro
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: Cylinder.000
-    100002: Cylinder.002
-    100004: //RootNode
-    100006: wood_pilar
-    100008: woodstack
-    400000: Cylinder.000
-    400002: Cylinder.002
-    400004: //RootNode
-    400006: wood_pilar
-    400008: woodstack
-    2100000: No Name
-    2300000: Cylinder.000
-    2300002: Cylinder.002
-    2300004: wood_pilar
-    2300006: woodstack
-    3300000: Cylinder.000
-    3300002: Cylinder.002
-    3300004: wood_pilar
-    3300006: woodstack
-    4300000: Cylinder.000
-    4300002: Cylinder.002
-    4300004: wood_pilar
-    4300006: woodstack
+    100000: //RootNode
+    400000: //RootNode
+    2100000: kivi
+    2100002: lumi
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: kivi2
   externalObjects: {}
   materials:
-    importMaterials: 0
+    importMaterials: 1
     materialName: 0
     materialSearch: 1
     materialLocation: 1
@@ -66,7 +50,7 @@ ModelImporter:
     importCameras: 1
     importLights: 1
     swapUVChannels: 0
-    generateSecondaryUV: 1
+    generateSecondaryUV: 0
     useFileUnits: 1
     optimizeMeshForGPU: 1
     keepQuads: 0
