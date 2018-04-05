@@ -30,6 +30,13 @@ public class Player : MonoBehaviour {
 
         
     }
+    public Vector3 WorldToGuiPoint(Vector3 position)
+    {
+        var guiPosition = Camera.main.WorldToScreenPoint(position);
+        guiPosition.y = Screen.height - guiPosition.y;
+
+        return guiPosition;
+    }
     /// <summary>
     /// draws the damageTexture
     /// </summary>
