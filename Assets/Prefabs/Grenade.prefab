@@ -174,7 +174,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1449337254418934}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -20.309, y: 0.3919999, z: -3.3239994}
+  m_LocalPosition: {x: -21.196117, y: -0.50026846, z: -2.451406}
   m_LocalScale: {x: 0.8000002, y: 0.8, z: 0.8000002}
   m_Children:
   - {fileID: 4821755462725340}
@@ -258,13 +258,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1389865258668748}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0.041, z: -0.006}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4230066104791536}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!23 &23332446595686112
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -485,7 +485,7 @@ HingeJoint:
   m_Anchor: {x: 0.00014, y: 0, z: 0}
   m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.00025893847, y: 2.3283107e-12, z: 0.000011761373}
+  m_ConnectedAnchor: {x: -0.0002589384, y: 2.3283107e-12, z: 0.000011761002}
   m_UseSpring: 0
   m_Spring:
     spring: 0
@@ -685,7 +685,7 @@ CapsuleCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1449337254418934}
-  m_Material: {fileID: 13400000, guid: 1f195a62a1d23ba4697af474924b12ff, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.047
