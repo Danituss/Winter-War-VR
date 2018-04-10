@@ -174,7 +174,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1449337254418934}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -21.196117, y: -0.50026846, z: -2.451406}
+  m_LocalPosition: {x: -20.317867, y: 0.3155, z: -3.2744603}
   m_LocalScale: {x: 0.8000002, y: 0.8, z: 0.8000002}
   m_Children:
   - {fileID: 4821755462725340}
@@ -259,7 +259,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1389865258668748}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0.041, z: -0.006}
+  m_LocalPosition: {x: 0, y: -0.0017, z: -0.006}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4230066104791536}
@@ -485,7 +485,7 @@ HingeJoint:
   m_Anchor: {x: 0.00014, y: 0, z: 0}
   m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.0002589384, y: 2.3283107e-12, z: 0.000011761002}
+  m_ConnectedAnchor: {x: -0.0002589384, y: 2.3283107e-12, z: 0.000011761373}
   m_UseSpring: 0
   m_Spring:
     spring: 0
@@ -652,13 +652,12 @@ MonoBehaviour:
   useOverrideButton: 3
   allowedUseControllers: 0
   usingState: 0
-  explosionSound: {fileID: 8300000, guid: 2ac63c6e431d40f458db0a4d188067f0, type: 3}
   fuseTimer: 5
   radius: 12
   explosionForce: 300
   damage: 6
   grenade: {fileID: 1449337254418934}
-  explosionEffect: {fileID: 1049009931013108, guid: 37809e5760ad14c10b7bc024adae9a07,
+  explosionEffect: {fileID: 1630281814610324, guid: 53e82de79b3d9f442a99f99263e9bd8a,
     type: 2}
 --- !u!114 &114677989245439054
 MonoBehaviour:

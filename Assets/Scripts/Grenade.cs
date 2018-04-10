@@ -5,11 +5,7 @@
 
     public class Grenade : VRTK_InteractableObject
     {
-
-        public AudioClip explosionSound;
-
         public float fuseTimer;
-
         public float radius;
         public float explosionForce;
         public float damage;
@@ -29,6 +25,11 @@
             if (fuse.IsRunning && fuse.ElapsedMilliseconds >= fuseTimer * 1000f)
             {
                 Explosion();
+
+                if(!grenade.GetComponent<AudioSource>().isPlaying)
+                {
+                    
+                }
                 Destroy(transform.parent.gameObject); //Destroy the pin after the explosion. Not the most elegant solution but it must be destroyed at some point.
             }
         }
@@ -44,15 +45,13 @@
             transform.parent.GetComponent<Rigidbody>().isKinematic = false; //Set the pin's rigidbody to not kinematic
         }
 
-        // grenade explosion
+        /// <summary>
+        /// Firstly will instantiate prefab which includes all the effects (particles, light, audio).
+        /// After that will check for physics objects to interact with, adds force to them and gives damage if necessary.
+        /// </summary>
         void Explosion()
         {
-
-            AudioSource.PlayClipAtPoint(explosionSound, transform.position, 1f);
-            GameObject clone = Instantiate(explosionEffect, grenade.transform.position, grenade.transform.rotation);
-            Destroy(clone, 2);
-
-
+            GameObject clone = Instantiate(explosionEffect, grenade.transform.position, grenade.transform.rotation); //the clone handels it's selfdestruct.
 
             foreach (Collider nearbyObject in Physics.OverlapSphere(grenade.transform.position, radius))
             {
@@ -70,7 +69,6 @@
                             target.TakeDamage((radius - distance) * damage);
                         }
                     }
-
                 }
                 Destroy(grenade);
             }

@@ -55,6 +55,7 @@ GameObject:
   - component: {fileID: 4754639883520108}
   - component: {fileID: 33262693819282716}
   - component: {fileID: 23012987021649234}
+  - component: {fileID: 114941895867333254}
   m_Layer: 0
   m_Name: m28_LOD0
   m_TagString: Untagged
@@ -494,7 +495,7 @@ MeshRenderer:
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
   m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 3
+  m_SelectedEditorRenderState: 2
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -767,7 +768,7 @@ AudioSource:
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
-  Mute: 1
+  Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
@@ -884,9 +885,9 @@ MonoBehaviour:
   pushForce: 5
   barrel: {fileID: 1443646885518666}
   muzzleLight: {fileID: 0}
-  particle: {fileID: 0}
+  particle: {fileID: 198699096008432434}
   fallbackClip: {fileID: 0}
-  stoneClip: {fileID: 0}
+  stoneClip: {fileID: 8300000, guid: 8b66e7d3318c69b4cbf090af8a101350, type: 3}
   iceClip: {fileID: 8300000, guid: 8b66e7d3318c69b4cbf090af8a101350, type: 3}
   fleshClip: {fileID: 8300000, guid: 7b05dc6be1fa4f24aa677960c23c6841, type: 3}
   metalClip: {fileID: 8300000, guid: 4ce8b70d583dae34ea172d8799572e7b, type: 3}
@@ -905,6 +906,18 @@ MonoBehaviour:
   ungrabDistance: 0.2
   releaseSnapSpeed: 0.1
   lockZRotation: 1
+--- !u!114 &114941895867333254
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1088797823760658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23fa698560b688845bf08bafe6dc1b28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AdditionalVertexStreamMesh: {fileID: 0}
 --- !u!198 &198699096008432434
 ParticleSystem:
   m_ObjectHideFlags: 1
