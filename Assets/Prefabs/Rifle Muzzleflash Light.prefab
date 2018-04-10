@@ -20,7 +20,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4043435710505334}
   - component: {fileID: 108453008141975738}
-  - component: {fileID: 114772728345545948}
   m_Layer: 0
   m_Name: Rifle Muzzleflash Light
   m_TagString: Untagged
@@ -35,7 +34,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1841340812239642}
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: 0, y: 0.029999971, z: 0.645}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -51,8 +50,8 @@ Light:
   serializedVersion: 8
   m_Type: 2
   m_Color: {r: 1, g: 0.71541584, b: 0.102941155, a: 1}
-  m_Intensity: 1
-  m_Range: 5
+  m_Intensity: 0.6
+  m_Range: 4
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
@@ -77,16 +76,3 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!114 &114772728345545948
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1841340812239642}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ecd78862bf355e40ad28873fbe03b21, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxLifetime: 0.05
-  lifetime: 0
