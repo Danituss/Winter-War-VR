@@ -47,7 +47,6 @@
 
 
 			particle.Play ();
-			muzzleLight.SetActive (true);
 			audioSource.Play();
 			//clipCurrent -= 1;
 			//cocked = false;

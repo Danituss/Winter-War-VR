@@ -854,7 +854,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   spreadCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -878,7 +878,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
 --- !u!108 &108130707583818284
 Light:
   m_ObjectHideFlags: 1
@@ -983,7 +983,6 @@ MonoBehaviour:
   fleshClip: {fileID: 0}
   metalClip: {fileID: 0}
   woodClip: {fileID: 0}
-  fire: {fileID: 0}
 --- !u!114 &114947978624691786
 MonoBehaviour:
   m_ObjectHideFlags: 1
