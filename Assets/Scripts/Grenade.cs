@@ -72,7 +72,7 @@
                     }
 
                 }
-                Destroy(grenade.transform.parent.gameObject);
+                Destroy(grenade);
             }
         }
     }
