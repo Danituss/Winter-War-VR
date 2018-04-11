@@ -25,11 +25,6 @@
             if (fuse.IsRunning && fuse.ElapsedMilliseconds >= fuseTimer * 1000f)
             {
                 Explosion();
-
-                if(!grenade.GetComponent<AudioSource>().isPlaying)
-                {
-                    
-                }
                 Destroy(transform.parent.gameObject); //Destroy the pin after the explosion. Not the most elegant solution but it must be destroyed at some point.
             }
         }

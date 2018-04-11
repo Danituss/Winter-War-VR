@@ -8,14 +8,14 @@
     public class Reload : MonoBehaviour
     {
         GameObject gun;
-        Gun gunscript;
-
+        GunMechanics gunscript;
+        
 
         // Use this for initialization
         void Start()
         {
             gun = transform.parent.gameObject;
-            gunscript = gun.GetComponent<Gun>();
+            gunscript = gun.GetComponent<GunMechanics>();
         }
 
         // Update is called once per frame
@@ -30,7 +30,7 @@
             if (col.gameObject.tag == "Ammo")
             {
                 Debug.Log("toimiiko?");
-                gunscript.ammo = 5;
+                gunscript.currentAmmo = gunscript.maxAmmo;
                 Destroy(col.gameObject);
             }
         }

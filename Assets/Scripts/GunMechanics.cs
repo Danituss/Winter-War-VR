@@ -1,8 +1,8 @@
-﻿namespace VRTK.examples
+﻿namespace VRTK
 {
     using UnityEngine;
 
-    public class Gun : VRTK_InteractableObject
+    public class GunMechanics : VRTK_InteractableObject
     {
         [Range(0,50)]
         public float damage = 10f;
@@ -13,12 +13,11 @@
 		private AudioSource audioSource;
 
         public AudioClip fallbackClip, stoneClip, iceClip, fleshClip, metalClip, woodClip;
+        
+        public int maxAmmo, currentAmmo;
 
-		//public int clipSize;
-		//int clipCurrent;
-
-		// True if weapon is ready to be fired 
-		bool cocked;
+        // True if weapon is ready to be fired
+        bool cocked;
 
 		// Ei lataus ääniä?
 		//public AudioClip reload;

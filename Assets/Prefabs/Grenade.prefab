@@ -126,6 +126,7 @@ GameObject:
   - component: {fileID: 33114448701344832}
   - component: {fileID: 23799313515235252}
   - component: {fileID: 65452673370268532}
+  - component: {fileID: 114603981420701934}
   m_Layer: 0
   m_Name: Igniter
   m_TagString: Untagged
@@ -143,9 +144,7 @@ GameObject:
   - component: {fileID: 4072788670747090}
   - component: {fileID: 33136635884647200}
   - component: {fileID: 23985616616259798}
-  - component: {fileID: 54824849879034848}
   - component: {fileID: 65347396757326262}
-  - component: {fileID: 59451733880064916}
   - component: {fileID: 114233136237175224}
   m_Layer: 0
   m_Name: Torus
@@ -160,13 +159,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1585651031394024}
-  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -0.00039893686, y: 0, z: 0.000011761151}
+  m_LocalRotation: {x: 0.6357117, y: -0.30580086, z: 0.29814872, w: 0.6430115}
+  m_LocalPosition: {x: -0.000357, y: -0, z: -0.000098}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4591400365594776}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 89.143005, y: -71.632, z: -21.068}
 --- !u!4 &4230066104791536
 Transform:
   m_ObjectHideFlags: 1
@@ -174,7 +173,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1449337254418934}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -20.317867, y: 0.3155, z: -3.2744603}
+  m_LocalPosition: {x: -18.86765, y: -8.9845, z: -8.071}
   m_LocalScale: {x: 0.8000002, y: 0.8, z: 0.8000002}
   m_Children:
   - {fileID: 4821755462725340}
@@ -348,7 +347,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_Materials:
   - {fileID: 2100000, guid: 9b6f257ca38edb6479920f967f097aff, type: 2}
-  - {fileID: 2100002, guid: c49c7950904e47044972993097b5ec97, type: 3}
+  - {fileID: 2100000, guid: d3070e4b8ae3eaa4096e8505a448e741, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -445,21 +444,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!54 &54824849879034848
-Rigidbody:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1585651031394024}
-  serializedVersion: 2
-  m_Mass: 0.01
-  m_Drag: 0.2
-  m_AngularDrag: 2
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!54 &54943094115223748
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -468,47 +452,13 @@ Rigidbody:
   m_GameObject: {fileID: 1449337254418934}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 1
-  m_AngularDrag: 1.5
+  m_Drag: 0.2
+  m_AngularDrag: 2
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!59 &59451733880064916
-HingeJoint:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1585651031394024}
-  m_ConnectedBody: {fileID: 54613246685370672}
-  m_Anchor: {x: 0.00014, y: 0, z: 0}
-  m_Axis: {x: 0, y: 0, z: 1}
-  m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.0002589384, y: 2.3283107e-12, z: 0.000011761373}
-  m_UseSpring: 0
-  m_Spring:
-    spring: 0
-    damper: 0
-    targetPosition: 0
-  m_UseMotor: 0
-  m_Motor:
-    targetVelocity: 0
-    force: 0
-    freeSpin: 0
-  m_UseLimits: 1
-  m_Limits:
-    min: 43.83063
-    max: 55
-    bounciness: 0
-    bounceMinVelocity: 0.1
-    contactDistance: 0
-  m_BreakForce: Infinity
-  m_BreakTorque: Infinity
-  m_EnableCollision: 0
-  m_EnablePreprocessing: 0
-  m_MassScale: 0.1
-  m_ConnectedMassScale: 0.1
+  m_CollisionDetection: 1
 --- !u!65 &65053352637811824
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -601,7 +551,7 @@ MonoBehaviour:
   validDrop: 1
   grabOverrideButton: 0
   allowedGrabControllers: 0
-  grabAttachMechanicScript: {fileID: 114677989245439054}
+  grabAttachMechanicScript: {fileID: 0}
   secondaryGrabActionScript: {fileID: 0}
   isUsable: 0
   holdButtonToUse: 0
@@ -659,6 +609,18 @@ MonoBehaviour:
   grenade: {fileID: 1449337254418934}
   explosionEffect: {fileID: 1630281814610324, guid: 53e82de79b3d9f442a99f99263e9bd8a,
     type: 2}
+--- !u!114 &114603981420701934
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1507393061260590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23fa698560b688845bf08bafe6dc1b28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AdditionalVertexStreamMesh: {fileID: 0}
 --- !u!114 &114677989245439054
 MonoBehaviour:
   m_ObjectHideFlags: 1

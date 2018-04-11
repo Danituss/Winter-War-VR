@@ -10438,8 +10438,8 @@ ParticleSystemRenderer:
   m_UseCustomVertexStreams: 0
   m_VertexStreams: 00010304
   m_Mesh: {fileID: 4300002, guid: 96c93d0329b2f46488ecebe1bcd00579, type: 3}
-  m_Mesh1: {fileID: 4300000, guid: 2bb41219ae2cb438594796ee4db068e3, type: 3}
-  m_Mesh2: {fileID: 4300006, guid: 96c93d0329b2f46488ecebe1bcd00579, type: 3}
+  m_Mesh1: {fileID: 0}
+  m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
 --- !u!199 &199606731680679214

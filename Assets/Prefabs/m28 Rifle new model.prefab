@@ -122,6 +122,7 @@ GameObject:
   - component: {fileID: 4873608308860290}
   - component: {fileID: 33912357858425072}
   - component: {fileID: 23226932343183938}
+  - component: {fileID: 114475589588451608}
   m_Layer: 0
   m_Name: m28_LOD0
   m_TagString: Untagged
@@ -153,10 +154,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4766639878162976}
   - component: {fileID: 54102588478431246}
-  - component: {fileID: 114734858930658024}
   - component: {fileID: 82179968700333624}
   - component: {fileID: 114218736898101444}
   - component: {fileID: 114344103782783660}
+  - component: {fileID: 114908207630976196}
   m_Layer: 0
   m_Name: m28 Rifle new model
   m_TagString: Untagged
@@ -362,7 +363,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1870787894629658}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -20.308, y: 0.601, z: -2.9173777}
+  m_LocalPosition: {x: -20.258, y: 0.293, z: -2.733}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4599354651655642}
@@ -495,9 +496,9 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 3cdd3cc200cd5634288e41bc86988c5c, type: 2}
+  - {fileID: 2100000, guid: d3070e4b8ae3eaa4096e8505a448e741, type: 2}
   - {fileID: 2100000, guid: 1b6533ff384bdb746a80dfd388f2b3fb, type: 2}
-  - {fileID: 2100006, guid: f34a66a67b1ff1549b9647788096e15a, type: 3}
+  - {fileID: 2100000, guid: 3cdd3cc200cd5634288e41bc86988c5c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -509,7 +510,7 @@ MeshRenderer:
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
   m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 3
+  m_SelectedEditorRenderState: 2
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -566,8 +567,8 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: fe9a6dd6722947b439262020c52e25e9, type: 2}
   - {fileID: 2100000, guid: 3cdd3cc200cd5634288e41bc86988c5c, type: 2}
+  - {fileID: 2100000, guid: fe9a6dd6722947b439262020c52e25e9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -753,7 +754,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 2
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -815,7 +816,19 @@ MonoBehaviour:
   ungrabDistance: 0.2
   releaseSnapSpeed: 0.1
   lockZRotation: 1
---- !u!114 &114734858930658024
+--- !u!114 &114475589588451608
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1639128368684364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23fa698560b688845bf08bafe6dc1b28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AdditionalVertexStreamMesh: {fileID: 0}
+--- !u!114 &114908207630976196
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -823,7 +836,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1870787894629658}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1d6e1a1a102bca24688b9cba64bf1ab1, type: 3}
+  m_Script: {fileID: 11500000, guid: 7a6b82eac12537147bea7728790c22d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   disableWhenIdle: 1
@@ -845,7 +858,7 @@ MonoBehaviour:
   useOverrideButton: 0
   allowedUseControllers: 0
   usingState: 0
-  damage: 20
+  damage: 10
   pushForce: 5
   barrel: {fileID: 1951015324999352}
   muzzleLight: {fileID: 0}
@@ -856,6 +869,8 @@ MonoBehaviour:
   fleshClip: {fileID: 8300000, guid: 7b05dc6be1fa4f24aa677960c23c6841, type: 3}
   metalClip: {fileID: 8300000, guid: 4ce8b70d583dae34ea172d8799572e7b, type: 3}
   woodClip: {fileID: 8300000, guid: e007b5a6182c65c459936a7dff9d0a9b, type: 3}
+  maxAmmo: 0
+  currentAmmo: 0
 --- !u!198 &198912488802747678
 ParticleSystem:
   m_ObjectHideFlags: 1
