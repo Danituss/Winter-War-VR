@@ -20,6 +20,9 @@ ModelImporter:
     400010: m28_LOD1
     400012: m28_LOD2
     2100000: No Name
+    2100002: meta_dark
+    2100004: wood
+    2100006: metal_light
     2300000: bolt_LOD0
     2300002: bolt_LOD1
     2300004: bolt_LOD2
