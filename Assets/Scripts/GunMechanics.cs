@@ -38,8 +38,8 @@
 			audioSource = GetComponent<AudioSource>();
         }
         
-            // when the fire button is pressed the gun shoots a raycast and looks if it hit a target that can be damaged
-         void FireBullet()
+        // when the fire button is pressed the gun shoots a raycast and looks if it hit a target that can be damaged
+        protected void FireBullet()
         {
 			SteamVR_Controller.Input((int)SteamVR_TrackedObject.EIndex.Device1).TriggerHapticPulse(500);
 			SteamVR_Controller.Input((int)SteamVR_TrackedObject.EIndex.Device2).TriggerHapticPulse(500);
@@ -69,7 +69,11 @@
 
                 go.AddComponent<HitSoundPlayer>();
                 go.GetComponent<HitSoundPlayer>().PlaySound(mat.material, fallbackClip, stoneClip, iceClip, fleshClip, metalClip, woodClip);
-               }
+            }
+        }
+
+        protected virtual void Recoil() {
+            
         }
     }
 }
