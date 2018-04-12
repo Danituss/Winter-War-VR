@@ -232,7 +232,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -256,7 +256,7 @@ Light:
   m_Type: 2
   m_Color: {r: 1, g: 0.8460446, b: 0.5147059, a: 1}
   m_Intensity: 1.5
-  m_Range: 10
+  m_Range: 12
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
@@ -292,7 +292,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ecd78862bf355e40ad28873fbe03b21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxLifetime: 0.1
+  maxLifetime: 0.2
   lifetime: 0
 --- !u!114 &114293431180774484
 MonoBehaviour:
@@ -365,7 +365,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -1215189223
+  randomSeed: 1956707147
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -3726,7 +3726,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 760859142
+  randomSeed: 1481703508
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -7087,7 +7087,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -1850842400
+  randomSeed: -910324954
   InitialModule:
     serializedVersion: 3
     enabled: 1

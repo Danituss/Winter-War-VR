@@ -333,7 +333,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1453299020098078}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -18.807781, y: -8.959, z: -7.1845455}
+  m_LocalPosition: {x: -20.346735, y: 0.39, z: -2.3470883}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4406392052185348}
@@ -533,9 +533,9 @@ Rigidbody:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1120756697742496}
   serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
+  m_Mass: 0.02
+  m_Drag: 5
+  m_AngularDrag: 0.2
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -776,9 +776,9 @@ MonoBehaviour:
   throwMultiplier: 1
   onGrabCollisionDelay: 0
   destroyImmediatelyOnThrow: 1
-  breakForce: 500
-  strength: 500
-  damper: 50
+  breakForce: Infinity
+  strength: 2000
+  damper: 1000
 --- !u!114 &114868752837513054
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -791,7 +791,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   disableWhenIdle: 1
-  touchHighlightColor: {r: 0, g: 0, b: 0, a: 0}
+  touchHighlightColor: {r: 0.9864097, g: 1, b: 0.014705896, a: 0}
   allowedTouchControllers: 0
   ignoredColliders: []
   isGrabbable: 1
@@ -800,7 +800,7 @@ MonoBehaviour:
   validDrop: 1
   grabOverrideButton: 0
   allowedGrabControllers: 0
-  grabAttachMechanicScript: {fileID: 0}
+  grabAttachMechanicScript: {fileID: 114620681655683250}
   secondaryGrabActionScript: {fileID: 0}
   isUsable: 0
   holdButtonToUse: 0
@@ -819,7 +819,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.03
+  m_Radius: 0.04
   m_Center: {x: -0.03, y: 0.0020064577, z: -0.09033493}
 --- !u!153 &153798736404260054
 ConfigurableJoint:
@@ -828,7 +828,7 @@ ConfigurableJoint:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1120756697742496}
   m_ConnectedBody: {fileID: 54361616082527526}
-  m_Anchor: {x: 0, y: 0.014175538, z: -0.176}
+  m_Anchor: {x: 0, y: 0.014175538, z: -0.195}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 0
   m_ConnectedAnchor: {x: 0, y: 0.041716576, z: -0.05}
@@ -844,7 +844,7 @@ ConfigurableJoint:
     spring: 0
     damper: 0
   m_LinearLimit:
-    limit: 0
+    limit: 0.07
     bounciness: 0
     contactDistance: 0
   m_AngularXLimitSpring:

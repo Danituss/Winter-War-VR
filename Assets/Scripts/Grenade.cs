@@ -46,7 +46,7 @@
         /// </summary>
         void Explosion()
         {
-            GameObject clone = Instantiate(explosionEffect, grenade.transform.position, grenade.transform.rotation); //the clone handels it's selfdestruct.
+			GameObject clone = Instantiate(explosionEffect, grenade.transform.position, Quaternion.identity); //the clone handels it's selfdestruct.
 
             foreach (Collider nearbyObject in Physics.OverlapSphere(grenade.transform.position, radius))
             {
