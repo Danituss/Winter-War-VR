@@ -18,7 +18,7 @@ public class Target_Script : MonoBehaviour {
 
     }
 
-   public IEnumerator BringDown(Transform target)
+   public IEnumerator BringDown()
     {
         shotDown = true;
         while (rotator.transform.rotation.y != 90)
@@ -33,7 +33,7 @@ public class Target_Script : MonoBehaviour {
         print("I am now downed.");
     }
 
-    public IEnumerator BringUp(Transform target)
+    public IEnumerator BringUp()
     {
         shotDown = false;
         while (rotator.transform.rotation.y != 0)
