@@ -14,25 +14,37 @@ public class Target_Script : MonoBehaviour {
     }
 	
 	
-	void Update () {
+	void Update () {   
 
-        //getting targets back up
-        if (Input.GetMouseButtonDown(0) && shotDown == true)
+    }
+
+   public IEnumerator BringDown(Transform target)
+    {
+        shotDown = true;
+        while (rotator.transform.rotation.y != 90)
         {
-            rotator.transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.Euler(0, 180, 0), speed * Time.deltaTime);
-
-            // rotator.transform.Rotate(0, -90, 0);
-            shotDown = false;
+            rotator.transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0, 90, 0), Time.deltaTime * speed);
+            // rotator.transform.Rotate(0,90, 0);
+            yield return null;
         }
 
+        print("Reached the target.");
+
+        print("I am now downed.");
     }
 
-
-    void OnTriggerEnter(Collider other)
-        //when targets get hit
+    public IEnumerator BringUp(Transform target)
     {
-        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0, 90, 0), Time.deltaTime * speed);
-       // rotator.transform.Rotate(0,90, 0);
-        shotDown = true;
+        shotDown = false;
+        while (rotator.transform.rotation.y != 0)
+        {
+            rotator.transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0, -90, 0), Time.deltaTime * speed);
+            yield return null;
+        }
+
+        print("Reached the target.");
+       
+        print("I am now up.");
     }
+
 }

@@ -9121,7 +9121,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectControlScript: {fileID: 114032933534011234}
   listenOnAxisChange: 0
-  maximumSpeed: 3
+  maximumSpeed: 2.5
   deceleration: 1
   fallingDeceleration: 1
   speedMultiplier: 1
@@ -9365,10 +9365,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectControlScript: {fileID: 114032933534011234}
   listenOnAxisChange: 1
-  maximumSpeed: 3
+  maximumSpeed: 2.5
   deceleration: 1
   fallingDeceleration: 1
-  speedMultiplier: 1.2
+  speedMultiplier: 1.5
   bodyPhysics: {fileID: 0}
 --- !u!114 &114669386099102494
 MonoBehaviour:
