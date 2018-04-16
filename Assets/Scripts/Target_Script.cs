@@ -12,39 +12,37 @@ public class Target_Script : MonoBehaviour {
     {
         shotDown = false;
     }
-	
-	
-	void Update () {   
 
-    }
-
-   public IEnumerator BringDown()
+    public IEnumerator BringDown()
     {
         shotDown = true;
-        while (rotator.transform.rotation.y != 90)
+        /*
+        while (rotator.transform.rotation.z >= -90f)
         {
-            rotator.transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0, 90, 0), Time.deltaTime * speed);
-            // rotator.transform.Rotate(0,90, 0);
+            rotator.transform.Rotate(Vector3.back * Time.deltaTime * speed);
             yield return null;
-        }
+        }*/
 
-        print("Reached the target.");
+        rotator.transform.rotation = new Quaternion(0, 0, -45, 0);
+        yield return null;
 
-        print("I am now downed.");
+        Debug.Log("I am now downed.");
     }
 
     public IEnumerator BringUp()
     {
         shotDown = false;
-        while (rotator.transform.rotation.y != 0)
+        /*
+        while (rotator.transform.rotation.z <= 0f)
         {
-            rotator.transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0, -90, 0), Time.deltaTime * speed);
+            rotator.transform.Rotate(Vector3.forward * Time.deltaTime * speed);
             yield return null;
-        }
+        }*/
 
-        print("Reached the target.");
-       
-        print("I am now up.");
+        rotator.transform.rotation = new Quaternion(0, 0, 0, 0);
+        yield return null;
+
+        Debug.Log("I am now up.");
     }
 
 }

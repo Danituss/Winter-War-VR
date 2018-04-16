@@ -53,13 +53,24 @@
             if (Physics.Raycast(barrel.transform.position, transform.forward, out hit))
             {
                 Debug.Log(hit.transform.name);
+                /*
                 Target target = hit.transform.GetComponent<Target>();
-				if (hit.rigidbody){
-					hit.rigidbody.AddForce (gameObject.transform.forward * pushForce, ForceMode.Impulse);
-						}
                 if (target != null)
                 {
                     target.TakeDamage(damage);
+                }*/
+
+                //If hit physical object
+                if (hit.rigidbody)
+                {
+                    hit.rigidbody.AddForce(gameObject.transform.forward * pushForce, ForceMode.Impulse);
+                }
+
+                //If hit shooting range target
+                if (hit.transform.name.Contains("target")) {
+                    Target_Script ts = hit.transform.GetComponent<Target_Script>();
+                    ts.StopAllCoroutines();
+                    ts.StartCoroutine(ts.BringDown());
                 }
                 
                 PhysicalMaterial mat = hit.transform.GetComponent<PhysicalMaterial>();

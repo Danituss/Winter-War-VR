@@ -22,6 +22,7 @@ public class ShootingRangeGame : MonoBehaviour {
     public AudioClip startSound, endSound;
     private AudioSource audioSource;
 
+    private bool started;
 
     private void Start()
     {
@@ -29,14 +30,14 @@ public class ShootingRangeGame : MonoBehaviour {
     }
 
 
+    float timeSince = 0f;
+
     public IEnumerator Game (){
         float time = duration;
-        float timeSince = 0f;
 
         foreach (Target_Script target in targets) {
             target.StartCoroutine(target.BringDown());
         }
-
 
         while (time > 0) {
             if (timeSince >= timeBetween) {
@@ -45,13 +46,16 @@ public class ShootingRangeGame : MonoBehaviour {
 
             yield return new WaitForSecondsRealtime(0.1f);
             time -= 0.1f;
+            timeSince += 0.1f;
         }
-        audioSource.PlayOneShot(endSound);
 
         foreach (Target_Script target in targets)
         {
             target.StartCoroutine(target.BringDown());
         }
+
+        audioSource.PlayOneShot(endSound);
+        started = false;
     }
 
 
@@ -59,16 +63,15 @@ public class ShootingRangeGame : MonoBehaviour {
     /// Rises a random target.
     /// </summary>
     public void RiseRandomTarget () {
-        Target_Script target = null;
+        Target_Script target = targets[Random.Range(0, targets.Length)].GetComponent<Target_Script>();
+        if (!target.shotDown){
+            return;
+        } 
 
-        while (target == null) {
-            Target_Script temp = targets[Random.Range(0, targets.Length)].GetComponent<Target_Script>();
-            if (temp.shotDown) {
-                target = temp;
-            }
-        }
-
+        target.StopAllCoroutines();
         target.StartCoroutine(target.BringUp());
+        timeSince = 0f;
+        Debug.Log("rose a target");
     }
 
     /// <summary>
@@ -76,7 +79,12 @@ public class ShootingRangeGame : MonoBehaviour {
     /// This is needed for buttons / events to be able to start the game
     /// </summary>
     public void StartGame () {
-        StartCoroutine(Game());
-        audioSource.PlayOneShot(startSound);
+        if (!started)
+        {
+            StartCoroutine(Game());
+            audioSource.PlayOneShot(startSound);
+            started = true;
+            Debug.Log("Started game");
+        }
     }
 }
