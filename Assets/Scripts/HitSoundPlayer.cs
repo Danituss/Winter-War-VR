@@ -12,7 +12,7 @@ public class HitSoundPlayer : MonoBehaviour {
         audioSource = GetComponent<AudioSource>();
 
         audioSource.spatialBlend = 1.0f; //Makes the audio 3D
-        audioSource.volume = 0.5f;
+        audioSource.volume = 0.7f;
 		audioSource.maxDistance = 100f;
 	}
 	
