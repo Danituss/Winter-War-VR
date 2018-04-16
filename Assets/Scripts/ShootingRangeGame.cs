@@ -33,6 +33,11 @@ public class ShootingRangeGame : MonoBehaviour {
         float time = duration;
         float timeSince = 0f;
 
+        foreach (Target_Script target in targets) {
+            target.StartCoroutine(target.BringDown());
+        }
+
+
         while (time > 0) {
             if (timeSince >= timeBetween) {
                 RiseRandomTarget();
@@ -42,6 +47,11 @@ public class ShootingRangeGame : MonoBehaviour {
             time -= 0.1f;
         }
         audioSource.PlayOneShot(endSound);
+
+        foreach (Target_Script target in targets)
+        {
+            target.StartCoroutine(target.BringDown());
+        }
     }
 
 
