@@ -8,6 +8,8 @@ TagManager:
   - rotator
   - currentGun
   - currentScope
+  - Saucers
+  - bullet
   layers:
   - Default
   - TransparentFX
