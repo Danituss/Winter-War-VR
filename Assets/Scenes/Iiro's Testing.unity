@@ -268,11 +268,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4744582949189394, guid: 4878b8f3794ff2e48bed1c7725d8599b, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 1.9407
+      value: 1.9551
       objectReference: {fileID: 0}
     - target: {fileID: 4744582949189394, guid: 4878b8f3794ff2e48bed1c7725d8599b, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 0.0451
+      value: 0.0369
       objectReference: {fileID: 0}
     - target: {fileID: 4744582949189394, guid: 4878b8f3794ff2e48bed1c7725d8599b, type: 2}
       propertyPath: m_LocalRotation.x
@@ -293,14 +293,6 @@ Prefab:
     - target: {fileID: 4744582949189394, guid: 4878b8f3794ff2e48bed1c7725d8599b, type: 2}
       propertyPath: m_RootOrder
       value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 1818317428001516, guid: 4878b8f3794ff2e48bed1c7725d8599b, type: 2}
-      propertyPath: m_Name
-      value: rifle_bullet
-      objectReference: {fileID: 0}
-    - target: {fileID: 4744582949189394, guid: 4878b8f3794ff2e48bed1c7725d8599b, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 90
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4878b8f3794ff2e48bed1c7725d8599b, type: 2}
@@ -550,6 +542,14 @@ Prefab:
     - target: {fileID: 4766639878162976, guid: 725d4584b85d2014c9525c5fbc8169ae, type: 2}
       propertyPath: m_RootOrder
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4634344692580868, guid: 725d4584b85d2014c9525c5fbc8169ae, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0.0395
+      objectReference: {fileID: 0}
+    - target: {fileID: 4634344692580868, guid: 725d4584b85d2014c9525c5fbc8169ae, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0.4511
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 725d4584b85d2014c9525c5fbc8169ae, type: 2}
