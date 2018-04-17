@@ -76,6 +76,7 @@ GameObject:
   - component: {fileID: 114178923415382948}
   - component: {fileID: 114868752837513054}
   - component: {fileID: 114620681655683250}
+  - component: {fileID: 114733152606712226}
   m_Layer: 0
   m_Name: bolt_LOD0
   m_TagString: Untagged
@@ -263,13 +264,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1120756697742496}
-  m_LocalRotation: {x: -0, y: 1, z: -0.000000021855696, w: 0}
+  m_LocalRotation: {x: 0.38268343, y: -0.92387956, z: -0.000000107488226, w: 0.00000025949953}
   m_LocalPosition: {x: 0.0009994507, y: 0.028758049, z: -0.21070099}
   m_LocalScale: {x: 0.91415787, y: 0.91415787, z: 0.91415787}
   m_Children: []
   m_Father: {fileID: 4871059971697532}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -179.99998, z: -45}
 --- !u!4 &4426633048474694
 Transform:
   m_ObjectHideFlags: 1
@@ -777,8 +778,19 @@ MonoBehaviour:
   onGrabCollisionDelay: 0
   destroyImmediatelyOnThrow: 1
   breakForce: Infinity
-  strength: 2000
-  damper: 1000
+  strength: 1000
+  damper: 500
+--- !u!114 &114733152606712226
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1120756697742496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26a24a0ba8181fc40a79bb68983a7a3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114868752837513054
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -829,7 +841,7 @@ ConfigurableJoint:
   m_GameObject: {fileID: 1120756697742496}
   m_ConnectedBody: {fileID: 54361616082527526}
   m_Anchor: {x: 0, y: 0, z: -0.04}
-  m_Axis: {x: 1, y: 1, z: -0}
+  m_Axis: {x: 0, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 0
   m_ConnectedAnchor: {x: 0.0009994507, y: 0.028758049, z: -0.21070099}
   serializedVersion: 2
@@ -870,7 +882,7 @@ ConfigurableJoint:
     bounciness: 0
     contactDistance: 0
   m_TargetPosition: {x: 0, y: 0, z: 0}
-  m_TargetVelocity: {x: 0, y: 0, z: 10}
+  m_TargetVelocity: {x: 0, y: 0, z: 20}
   m_XDrive:
     serializedVersion: 3
     positionSpring: 0
@@ -886,8 +898,8 @@ ConfigurableJoint:
     positionSpring: 0
     positionDamper: 0
     maximumForce: 0
-  m_TargetRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_TargetAngularVelocity: {x: 0, y: 0, z: 10}
+  m_TargetRotation: {x: 0, y: 0, z: 90, w: 1}
+  m_TargetAngularVelocity: {x: 0, y: 0, z: 20}
   m_RotationDriveMode: 0
   m_AngularXDrive:
     serializedVersion: 3
@@ -898,15 +910,15 @@ ConfigurableJoint:
     serializedVersion: 3
     positionSpring: 0
     positionDamper: 0
-    maximumForce: 3.4028233e+38
+    maximumForce: 0
   m_SlerpDrive:
     serializedVersion: 3
     positionSpring: 0
     positionDamper: 0
     maximumForce: 3.4028233e+38
   m_ProjectionMode: 0
-  m_ProjectionDistance: 4
-  m_ProjectionAngle: 46
+  m_ProjectionDistance: 0
+  m_ProjectionAngle: 0
   m_ConfiguredInWorldSpace: 0
   m_SwapBodies: 0
   m_BreakForce: Infinity
