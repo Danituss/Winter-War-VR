@@ -597,7 +597,7 @@ Rigidbody:
   m_GameObject: {fileID: 1120756697742496}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 2
+  m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 0
   m_IsKinematic: 0
@@ -894,8 +894,8 @@ MonoBehaviour:
   onGrabCollisionDelay: 0
   destroyImmediatelyOnThrow: 1
   breakForce: Infinity
-  strength: 2000
-  damper: 1000
+  strength: 30000
+  damper: 100
 --- !u!114 &114733152606712226
 MonoBehaviour:
   m_ObjectHideFlags: 1

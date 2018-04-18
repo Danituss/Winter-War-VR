@@ -19,7 +19,7 @@ public class BoltLock : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(atTheBack);
+        
 
         //Lock movement when bolt isn't upright
         if (rb.rotation.eulerAngles.z > 270)
