@@ -36,7 +36,8 @@ public class ShootingRangeGame : MonoBehaviour {
         float time = duration;
 
         foreach (Target_Script target in targets) {
-            target.StartCoroutine(target.BringDown());
+            target.MakeFall();
+            //target.StartCoroutine(target.BringDown());
         }
 
         while (time > 0) {
@@ -51,7 +52,8 @@ public class ShootingRangeGame : MonoBehaviour {
 
         foreach (Target_Script target in targets)
         {
-            target.StartCoroutine(target.BringDown());
+            target.MakeFall();
+            //target.StartCoroutine(target.BringDown());
         }
 
         audioSource.PlayOneShot(endSound);
@@ -64,12 +66,13 @@ public class ShootingRangeGame : MonoBehaviour {
     /// </summary>
     public void RiseRandomTarget () {
         Target_Script target = targets[Random.Range(0, targets.Length)].GetComponent<Target_Script>();
-        if (!target.shotDown){
+        if (target.isDown == false){
             return;
         } 
 
-        target.StopAllCoroutines();
-        target.StartCoroutine(target.BringUp());
+        //target.StopAllCoroutines();
+        //target.StartCoroutine(target.BringUp();
+        target.TargetRise();
         timeSince = 0f;
         Debug.Log("rose a target");
     }

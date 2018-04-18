@@ -67,12 +67,14 @@
                 }
 
                 //If hit shooting range target
-                if (hit.transform.name.Contains("target")) {
+                if (hit.transform.name.Contains("Board"))
+                {
                     Target_Script ts = hit.transform.GetComponent<Target_Script>();
-                    ts.StopAllCoroutines();
-                    ts.StartCoroutine(ts.BringDown());
+                    //ts.StopAllCoroutines();
+                    ts.MakeFall();
+                    //ts.StartCoroutine(ts.BringDown());
                 }
-                
+
                 PhysicalMaterial mat = hit.transform.GetComponent<PhysicalMaterial>();
 
                 GameObject go = new GameObject("hit");
