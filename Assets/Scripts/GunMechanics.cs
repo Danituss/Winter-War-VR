@@ -11,7 +11,7 @@
 		public GameObject muzzleLight;
 		public ParticleSystem particle;
 		private AudioSource audioSource;
-
+        Recoil recoil_script;
         public AudioClip fallbackClip, stoneClip, iceClip, fleshClip, metalClip, woodClip;
         
         public int maxAmmo, currentAmmo;
@@ -36,14 +36,14 @@
 			//clipCurrent = clipSize;
 			cocked = true;
 			audioSource = GetComponent<AudioSource>();
+            recoil_script = GetComponent<Recoil>();
         }
         
         // when the fire button is pressed the gun shoots a raycast and looks if it hit a target that can be damaged
         protected void FireBullet()
         {
-			SteamVR_Controller.Input((int)SteamVR_TrackedObject.EIndex.Device1).TriggerHapticPulse(500);
-			SteamVR_Controller.Input((int)SteamVR_TrackedObject.EIndex.Device2).TriggerHapticPulse(500);
 
+            recoil_script.StartRecoil(0.2f, 5, 10);
 
 			particle.Play ();
 			audioSource.Play();
