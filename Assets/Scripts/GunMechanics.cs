@@ -12,7 +12,7 @@
 		public ParticleSystem particle;
 		private AudioSource audioSource;
         Recoil recoil_script;
-        public AudioClip fallbackClip, stoneClip, iceClip, fleshClip, metalClip, woodClip;
+        public AudioClip fallbackClip, stoneClip, iceClip, fleshClip, metalClip, woodClip, noAmmo;
         
         public int maxAmmo, currentAmmo;
 
@@ -24,16 +24,23 @@
 
         public override void StartUsing(VRTK_InteractUse usingObject)
         {
-			// We check if clip has bullets in it
-			if (cocked == true) {
+            // We check if clip has bullets in it (and is cocked), else play noAmmo audioclip
+            if (cocked == true && currentAmmo >= 1)
+            {
 				base.StartUsing (usingObject);
 				FireBullet ();
 			}
+            else
+            {
+                audioSource.PlayOneShot(noAmmo);
+            }
         }
 
         protected void Start()
         {
-			//clipCurrent = clipSize;
+            //clipCurrent = clipSize;
+            maxAmmo = 5;
+            currentAmmo = maxAmmo;
 			cocked = true;
 			audioSource = GetComponent<AudioSource>();
             recoil_script = GetComponent<Recoil>();
@@ -47,7 +54,7 @@
 
 			particle.Play ();
 			audioSource.Play();
-			//clipCurrent -= 1;
+			currentAmmo -= 1;
 			//cocked = false;
             RaycastHit hit;
             if (Physics.Raycast(barrel.transform.position, transform.forward, out hit))
