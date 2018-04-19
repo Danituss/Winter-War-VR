@@ -6,14 +6,15 @@ public class BoltLock : MonoBehaviour
 {
     Rigidbody rb;
     Vector3 startPos;
-    bool atTheBack;
+    bool upRight;
 
     // Use this for initialization
     void Start()
     {
-        rb = this.gameObject.GetComponent<Rigidbody>();
+        rb = gameObject.GetComponent<Rigidbody>();
         startPos = transform.localPosition;
-        atTheBack = false;
+        upRight = false;
+        
     }
 
     // Update is called once per frame
@@ -28,11 +29,11 @@ public class BoltLock : MonoBehaviour
             rb.constraints &= ~RigidbodyConstraints.FreezeRotationZ;
             rb.constraints &= ~RigidbodyConstraints.FreezeRotationY;
             rb.constraints &= ~RigidbodyConstraints.FreezeRotationX;
-
+         
 
         }
         //Unlock movement when bolt is upright
-        else if (this.gameObject.transform.localPosition.z < startPos.z && atTheBack == false || rb.rotation.eulerAngles.z < 270 && atTheBack == false)
+        else if (gameObject.transform.localPosition.z < startPos.z && upRight == false || rb.rotation.eulerAngles.z < 270 && upRight == false)
         {
             rb.constraints = RigidbodyConstraints.FreezeRotationZ;
             rb.constraints &= ~RigidbodyConstraints.FreezePositionZ;
@@ -48,32 +49,18 @@ public class BoltLock : MonoBehaviour
     //When the bolt reaches the back of the weapon, it can move down
     void OnTriggerEnter(Collider col)
     {
-
-        if (col.gameObject.name == "BoltLock Trigger Back")
-        {
-
-            if (atTheBack == false)
-            {
-                atTheBack = true;
-                rb.constraints &= ~RigidbodyConstraints.FreezeRotationZ;
-            }
-            else
-            {
-                atTheBack = false;
-            }
-
-        }
+        
         if (col.gameObject.name == "BoltLock Trigger Front")
         {
 
-            if (atTheBack == false)
+            if (upRight == false)
             {
-                atTheBack = true;
+                upRight = true;
                 rb.constraints &= ~RigidbodyConstraints.FreezeRotationZ;
             }
             else
             {
-                atTheBack = false;
+                upRight = false;
             }
 
         }
