@@ -338,7 +338,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1558148425125306}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.023300007, y: 0.041499972, z: -0.1304}
+  m_LocalPosition: {x: -0.0333, y: 0.041499972, z: -0.1304}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4871059971697532}
@@ -572,7 +572,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!54 &54361616082527526
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -760,6 +760,7 @@ MonoBehaviour:
   fleshClip: {fileID: 8300000, guid: 7b05dc6be1fa4f24aa677960c23c6841, type: 3}
   metalClip: {fileID: 8300000, guid: 4ce8b70d583dae34ea172d8799572e7b, type: 3}
   woodClip: {fileID: 8300000, guid: e007b5a6182c65c459936a7dff9d0a9b, type: 3}
+  noAmmo: {fileID: 0}
   maxAmmo: 5
   currentAmmo: 0
 --- !u!114 &114112675086393868
@@ -836,8 +837,8 @@ MonoBehaviour:
   onGrabCollisionDelay: 0
   destroyImmediatelyOnThrow: 1
   breakForce: Infinity
-  strength: 30000
-  damper: 100
+  strength: 20000
+  damper: 500
 --- !u!114 &114733152606712226
 MonoBehaviour:
   m_ObjectHideFlags: 1

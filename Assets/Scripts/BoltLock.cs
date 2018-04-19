@@ -14,26 +14,27 @@ public class BoltLock : MonoBehaviour
         rb = gameObject.GetComponent<Rigidbody>();
         startPos = transform.localPosition;
         upRight = false;
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        Debug.Log(upRight);
+
 
         //Lock movement when bolt isn't upright
-        if (rb.rotation.eulerAngles.z > 270)
+        if (rb.rotation.eulerAngles.z > 270 || upRight == false)
         {
             rb.constraints = RigidbodyConstraints.FreezeAll;
             rb.constraints &= ~RigidbodyConstraints.FreezeRotationZ;
             rb.constraints &= ~RigidbodyConstraints.FreezeRotationY;
             rb.constraints &= ~RigidbodyConstraints.FreezeRotationX;
-         
+
 
         }
         //Unlock movement when bolt is upright
-        else if (gameObject.transform.localPosition.z < startPos.z && upRight == false || rb.rotation.eulerAngles.z < 270 && upRight == false)
+        else if (gameObject.transform.localPosition.z < startPos.z || rb.rotation.eulerAngles.z < 270 && upRight == true)
         {
             rb.constraints = RigidbodyConstraints.FreezeRotationZ;
             rb.constraints &= ~RigidbodyConstraints.FreezePositionZ;
@@ -49,21 +50,25 @@ public class BoltLock : MonoBehaviour
     //When the bolt reaches the back of the weapon, it can move down
     void OnTriggerEnter(Collider col)
     {
-        
+
+
         if (col.gameObject.name == "BoltLock Trigger Front")
         {
 
+            
             if (upRight == false)
             {
                 upRight = true;
-                rb.constraints &= ~RigidbodyConstraints.FreezeRotationZ;
             }
             else
             {
                 upRight = false;
             }
-
         }
 
+
     }
+
 }
+    
+
