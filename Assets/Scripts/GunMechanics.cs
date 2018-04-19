@@ -25,7 +25,7 @@
         public override void StartUsing(VRTK_InteractUse usingObject)
         {
             // We check if clip has bullets in it (and is cocked), else play noAmmo audioclip
-            if (cocked == true && currentAmmo >= 1)
+            if (cocked == true && (currentAmmo >= 1))
             {
 				base.StartUsing (usingObject);
 				FireBullet ();
@@ -50,7 +50,7 @@
         protected void FireBullet()
         {
 
-            recoil_script.StartRecoil(0.2f, 5, 10);
+            //recoil_script.StartRecoil(0.2f, 5, 10);
 
 			particle.Play ();
 			audioSource.Play();
