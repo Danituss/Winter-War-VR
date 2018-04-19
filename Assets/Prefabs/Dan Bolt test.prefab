@@ -75,8 +75,8 @@ GameObject:
   - component: {fileID: 135067050377063110}
   - component: {fileID: 114178923415382948}
   - component: {fileID: 114868752837513054}
-  - component: {fileID: 114620681655683250}
   - component: {fileID: 114733152606712226}
+  - component: {fileID: 114667303318143302}
   m_Layer: 0
   m_Name: bolt_LOD0
   m_TagString: Untagged
@@ -338,7 +338,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1558148425125306}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.0333, y: 0.041499972, z: -0.1304}
+  m_LocalPosition: {x: -0.029, y: 0.041499972, z: -0.1184}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4871059971697532}
@@ -818,7 +818,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_AdditionalVertexStreamMesh: {fileID: 0}
---- !u!114 &114620681655683250
+--- !u!114 &114667303318143302
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -826,7 +826,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1120756697742496}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 99490d2901160b540b6ce6a321816a4d, type: 3}
+  m_Script: {fileID: 11500000, guid: 8a1ebaa51525b734287157cb3f53f958, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   precisionGrab: 1
@@ -835,10 +835,9 @@ MonoBehaviour:
   throwVelocityWithAttachDistance: 0
   throwMultiplier: 1
   onGrabCollisionDelay: 0
-  destroyImmediatelyOnThrow: 1
-  breakForce: Infinity
-  strength: 20000
-  damper: 500
+  detachDistance: 1
+  velocityLimit: Infinity
+  angularVelocityLimit: Infinity
 --- !u!114 &114733152606712226
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -871,7 +870,7 @@ MonoBehaviour:
   validDrop: 1
   grabOverrideButton: 0
   allowedGrabControllers: 0
-  grabAttachMechanicScript: {fileID: 114620681655683250}
+  grabAttachMechanicScript: {fileID: 114667303318143302}
   secondaryGrabActionScript: {fileID: 0}
   isUsable: 0
   holdButtonToUse: 0
@@ -890,7 +889,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.04
+  m_Radius: 0.03
   m_Center: {x: -0.03, y: 0.0020064577, z: -0.09033493}
 --- !u!153 &153798736404260054
 ConfigurableJoint:
