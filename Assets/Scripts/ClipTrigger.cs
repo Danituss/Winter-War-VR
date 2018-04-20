@@ -32,14 +32,19 @@
             //}
         }
 
+        public void DestroyThis()
+        {
+            
+        }
+
         //Reload ammo if clip enters inner part of gun
         void OnTriggerEnter(Collider col)
         {
 
             if (col.gameObject.tag == "bullet" /*&& firstTime*/)
             {
-                Debug.Log("Ammo Reloaded");
-                gunscript.currentAmmo = gunscript.maxAmmo;
+                //Debug.Log("Ammo Reloaded");
+                //gunscript.currentAmmo = gunscript.maxAmmo;
                 //firstTime = false;
                 Destroy(col.gameObject);
             }

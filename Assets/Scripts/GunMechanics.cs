@@ -36,11 +36,14 @@
             }
         }
 
+        public void Reload()
+        {
+            currentAmmo = maxAmmo;
+            Debug.Log("Ammo Reloaded");
+        }
+
         protected void Start()
         {
-            //clipCurrent = clipSize;
-            maxAmmo = 5;
-            currentAmmo = maxAmmo;
 			cocked = true;
 			audioSource = GetComponent<AudioSource>();
             recoil_script = GetComponent<Recoil>();
