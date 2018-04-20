@@ -3308,7 +3308,7 @@ MonoBehaviour:
   fleshClip: {fileID: 8300000, guid: 7b05dc6be1fa4f24aa677960c23c6841, type: 3}
   metalClip: {fileID: 8300000, guid: 4ce8b70d583dae34ea172d8799572e7b, type: 3}
   woodClip: {fileID: 8300000, guid: e007b5a6182c65c459936a7dff9d0a9b, type: 3}
-  noAmmo: {fileID: 8300000, guid: 6ad72bb6c7d54a541a95788a25ff7caa, type: 3}
+  noAmmo: {fileID: 8300000, guid: a10f3346a33ee1e4cb6ab960118762e4, type: 3}
   maxAmmo: 5
   currentAmmo: 0
 --- !u!114 &114937040930315130
