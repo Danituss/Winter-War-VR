@@ -5,16 +5,18 @@
     public class GunMechanics : VRTK_InteractableObject
     {
         [Range(0,50)]
-        public float damage = 10f;
-		public float pushForce;
-		public GameObject barrel;
-		public GameObject muzzleLight;
-		public ParticleSystem particle;
-		private AudioSource audioSource;
-        Recoil recoil_script;
-        public AudioClip fallbackClip, stoneClip, iceClip, fleshClip, metalClip, woodClip, noAmmo;
-        
+        public float damage = 10f, pushForce;
         public int maxAmmo, currentAmmo;
+        [Header("References")]
+		public GameObject barrel;
+		public ParticleSystem particle;
+        private AudioSource audioSource;
+        public ClipSnapDropZone clipSnapDropZone;
+        Recoil recoil_script;
+        [Header("Impact sounds")]
+        public AudioClip fallbackClip;
+        public AudioClip stoneClip, iceClip, fleshClip, metalClip, woodClip, noAmmo;
+
 
         // True if weapon is ready to be fired
         bool cocked;
@@ -33,6 +35,11 @@
             else
             {
                 audioSource.PlayOneShot(noAmmo);
+            }
+
+            if(currentAmmo == maxAmmo) 
+            {
+                clipSnapDropZone.enabled = true;
             }
         }
 
