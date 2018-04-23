@@ -20,6 +20,7 @@ namespace VRTK
             hasBeenBack = false;
             upRight = false;
             rb = gameObject.GetComponent<Rigidbody>();
+            gun = transform.parent.gameObject;
             gunscript = gun.GetComponent<GunMechanics>();
             SideWays();
 

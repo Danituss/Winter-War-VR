@@ -61,7 +61,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1058592510469428
 GameObject:
   m_ObjectHideFlags: 1
@@ -3375,9 +3375,11 @@ MonoBehaviour:
   usingState: 0
   damage: 10
   pushForce: 5
+  maxAmmo: 5
+  currentAmmo: 0
   barrel: {fileID: 1951015324999352}
-  muzzleLight: {fileID: 0}
   particle: {fileID: 198912488802747678}
+  clipSnapDropZone: {fileID: 0}
   fallbackClip: {fileID: 0}
   stoneClip: {fileID: 8300000, guid: 8b66e7d3318c69b4cbf090af8a101350, type: 3}
   iceClip: {fileID: 8300000, guid: 8b66e7d3318c69b4cbf090af8a101350, type: 3}
@@ -3385,8 +3387,7 @@ MonoBehaviour:
   metalClip: {fileID: 8300000, guid: 4ce8b70d583dae34ea172d8799572e7b, type: 3}
   woodClip: {fileID: 8300000, guid: e007b5a6182c65c459936a7dff9d0a9b, type: 3}
   noAmmo: {fileID: 8300000, guid: a10f3346a33ee1e4cb6ab960118762e4, type: 3}
-  maxAmmo: 5
-  currentAmmo: 0
+  cocked: 0
 --- !u!198 &198912488802747678
 ParticleSystem:
   m_ObjectHideFlags: 1
