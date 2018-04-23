@@ -90,7 +90,7 @@
         }
         
         // when the fire button is pressed the gun shoots a raycast and looks if it hit a target that can be damaged
-        protected void FireBullet()
+        protected virtual void FireBullet()
         {
             VRTK_ControllerHaptics.TriggerHapticPulse(VRTK_ControllerReference.GetControllerReference(controllerEvents1.gameObject), 1f, 0.05f, 0.01f);
             if (controllerEvents2.gameObject != null)
@@ -102,7 +102,7 @@
             particle.Play ();
 			audioSource.Play();
 			currentAmmo -= 1;
-			cocked = false;
+			//cocked = false;
             RaycastHit hit;
             if (Physics.Raycast(barrel.transform.position, transform.forward, out hit))
             {

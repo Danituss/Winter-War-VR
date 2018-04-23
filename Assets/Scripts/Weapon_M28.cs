@@ -6,5 +6,10 @@
         protected override void Recoil() {
             base.Recoil();
         }
+        protected override void FireBullet()
+        {
+            base.FireBullet();
+            //cocked = false;
+        }
     }
 }
