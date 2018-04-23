@@ -20,7 +20,7 @@
         private VRTK_ControllerEvents controllerEvents2;
 
         // True if weapon is ready to be fired
-        bool cocked;
+        public bool cocked;
 
         // Ei lataus ääniä?
         //public AudioClip reload;
@@ -102,7 +102,7 @@
             particle.Play ();
 			audioSource.Play();
 			currentAmmo -= 1;
-			//cocked = false;
+			cocked = false;
             RaycastHit hit;
             if (Physics.Raycast(barrel.transform.position, transform.forward, out hit))
             {
