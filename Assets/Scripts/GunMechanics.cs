@@ -16,14 +16,47 @@
         [Header("Impact sounds")]
         public AudioClip fallbackClip;
         public AudioClip stoneClip, iceClip, fleshClip, metalClip, woodClip, noAmmo;
-
+        private VRTK_ControllerEvents controllerEvents1;
+        private VRTK_ControllerEvents controllerEvents2;
 
         // True if weapon is ready to be fired
         bool cocked;
 
-		// Ei lataus ääniä?
-		//public AudioClip reload;
+        // Ei lataus ääniä?
+        //public AudioClip reload;
+        public override void Grabbed(VRTK_InteractGrab currentGrabbingObject)
+        {
+            
+            base.Grabbed(currentGrabbingObject);
 
+
+            if (controllerEvents1 != null)
+            {
+                controllerEvents2 = currentGrabbingObject.GetComponent<VRTK_ControllerEvents>();
+            }
+            else
+            {
+
+
+                controllerEvents1 = currentGrabbingObject.GetComponent<VRTK_ControllerEvents>();
+            }
+            Debug.Log(controllerEvents1);
+            Debug.Log(controllerEvents2);
+        }
+
+        public override void Ungrabbed(VRTK_InteractGrab previousGrabbingObject)
+        {
+            
+            base.Ungrabbed(previousGrabbingObject);
+
+            if (controllerEvents1 == null)
+            {
+                controllerEvents2 = null;
+            } 
+            controllerEvents1 = null;
+            Debug.Log(controllerEvents1);
+            Debug.Log(controllerEvents2);
+        }
         public override void StartUsing(VRTK_InteractUse usingObject)
         {
             // We check if clip has bullets in it (and is cocked), else play noAmmo audioclip
@@ -59,10 +92,14 @@
         // when the fire button is pressed the gun shoots a raycast and looks if it hit a target that can be damaged
         protected void FireBullet()
         {
-
+            VRTK_ControllerHaptics.TriggerHapticPulse(VRTK_ControllerReference.GetControllerReference(controllerEvents1.gameObject), 1f, 0.05f, 0.01f);
+            if (controllerEvents2.gameObject != null)
+            {
+                VRTK_ControllerHaptics.TriggerHapticPulse(VRTK_ControllerReference.GetControllerReference(controllerEvents2.gameObject), 1f, 0.05f, 0.01f);
+            }
             //recoil_script.StartRecoil(0.2f, 5, 10);
 
-			particle.Play ();
+            particle.Play ();
 			audioSource.Play();
 			currentAmmo -= 1;
 			//cocked = false;

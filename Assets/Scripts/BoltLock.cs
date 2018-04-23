@@ -22,7 +22,7 @@ public class BoltLock : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(upRight);
+        
     }
     //When the bolt reaches the back of the weapon, it can move down
     void OnTriggerEnter(Collider col)
