@@ -93,7 +93,7 @@
         protected virtual void FireBullet()
         {
             VRTK_ControllerHaptics.TriggerHapticPulse(VRTK_ControllerReference.GetControllerReference(controllerEvents1.gameObject), 1f, 0.05f, 0.01f);
-            if (controllerEvents2.gameObject != null)
+            if (controllerEvents2 != null)
             {
                 VRTK_ControllerHaptics.TriggerHapticPulse(VRTK_ControllerReference.GetControllerReference(controllerEvents2.gameObject), 1f, 0.05f, 0.01f);
             }
