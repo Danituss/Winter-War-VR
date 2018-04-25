@@ -16,6 +16,7 @@
         [Header("Impact sounds")]
         public AudioClip fallbackClip;
         public AudioClip stoneClip, iceClip, fleshClip, metalClip, woodClip, noAmmo;
+        public ParticleSystem stoneP, iceP, fleshP, metalP, woodP;
         private VRTK_ControllerEvents controllerEvents1;
         private VRTK_ControllerEvents controllerEvents2;
 
@@ -54,8 +55,7 @@
                 controllerEvents2 = null;
             } 
             controllerEvents1 = null;
-            Debug.Log(controllerEvents1);
-            Debug.Log(controllerEvents2);
+           
         }
         public override void StartUsing(VRTK_InteractUse usingObject)
         {
@@ -136,6 +136,24 @@
 
                 go.AddComponent<HitSoundPlayer>();
                 go.GetComponent<HitSoundPlayer>().PlaySound(mat.material, fallbackClip, stoneClip, iceClip, fleshClip, metalClip, woodClip);
+                switch (mat.material)
+                {
+                    case PhysicalMaterial.physMaterial.flesh:
+                        Instantiate(fleshP, hit.point, Quaternion.identity);
+                        break;
+                    case PhysicalMaterial.physMaterial.stone:
+                        Instantiate(stoneP, hit.point, Quaternion.identity);
+                        break;
+                    case PhysicalMaterial.physMaterial.wood:
+                        Instantiate(woodP, hit.point, Quaternion.identity);
+                        break;
+                    case PhysicalMaterial.physMaterial.ice:
+                        Instantiate(iceP, hit.point, Quaternion.identity);
+                        break;
+                    case PhysicalMaterial.physMaterial.metal:
+                        Instantiate(metalP, hit.point, Quaternion.identity);
+                        break;
+                }
             }
         }
 
