@@ -367,6 +367,8 @@ GameObject:
   - component: {fileID: 124991087334369218}
   - component: {fileID: 114621787505830652}
   - component: {fileID: 114080912082145316}
+  - component: {fileID: 114539954911039068}
+  - component: {fileID: 114882948812911808}
   m_Layer: 0
   m_Name: Camera (eye)
   m_TagString: MainCamera
@@ -445,7 +447,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1155762774497388
 GameObject:
   m_ObjectHideFlags: 1
@@ -1032,8 +1034,9 @@ GameObject:
   - component: {fileID: 114737155985824788}
   - component: {fileID: 33586051154931164}
   - component: {fileID: 23361061658485536}
+  - component: {fileID: 114464196654240546}
   m_Layer: 0
-  m_Name: SnapDropZone_Left (1)
+  m_Name: SnapDropZone_Left_middle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1334,6 +1337,7 @@ GameObject:
   - component: {fileID: 92814259219243516}
   - component: {fileID: 81147860131060848}
   - component: {fileID: 114852413071308784}
+  - component: {fileID: 114847691308315192}
   m_Layer: 0
   m_Name: Camera
   m_TagString: MainCamera
@@ -1742,6 +1746,7 @@ GameObject:
   - component: {fileID: 4863778495725608}
   - component: {fileID: 33642998563462444}
   - component: {fileID: 23146797003630342}
+  - component: {fileID: 114779253354699918}
   m_Layer: 0
   m_Name: EditorHighlightObject
   m_TagString: Untagged
@@ -2236,6 +2241,7 @@ GameObject:
   - component: {fileID: 81435291182487830}
   - component: {fileID: 20750679184534254}
   - component: {fileID: 114748757302644184}
+  - component: {fileID: 114503668260629968}
   m_Layer: 0
   m_Name: CenterEyeAnchor
   m_TagString: MainCamera
@@ -2608,8 +2614,9 @@ GameObject:
   - component: {fileID: 114476366704176474}
   - component: {fileID: 33105109175374012}
   - component: {fileID: 23570504236935774}
+  - component: {fileID: 114221359310451706}
   m_Layer: 0
-  m_Name: SnapDropZone_Right (1)
+  m_Name: SnapDropZone_Right_middle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2868,7 +2875,7 @@ Transform:
   m_GameObject: {fileID: 1054435202783488}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4621507774862704}
   - {fileID: 4989223244001300}
@@ -3038,12 +3045,12 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1624971245841292}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.2, y: 0, z: 0.2}
+  m_LocalPosition: {x: 0.2, y: 0, z: 0.13000007}
   m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
   m_Children:
   - {fileID: 4883557707433794}
   m_Father: {fileID: 4165474097542472}
-  m_RootOrder: 1
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4139672996059430
 Transform:
@@ -3118,10 +3125,10 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4629619584368598}
-  - {fileID: 4123281269319254}
+  - {fileID: 4503284851171554}
   - {fileID: 4496134539973664}
   - {fileID: 4757798928638424}
-  - {fileID: 4503284851171554}
+  - {fileID: 4123281269319254}
   m_Father: {fileID: 4412077298652872}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3597,7 +3604,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1153882988845906}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.016, y: -0.019, z: -0.173}
+  m_LocalPosition: {x: -0.016, y: -0.019, z: -0.146}
   m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
   m_Children:
   - {fileID: 4262485368915300}
@@ -3629,7 +3636,7 @@ Transform:
   m_Children:
   - {fileID: 4995396279137846}
   m_Father: {fileID: 4165474097542472}
-  m_RootOrder: 4
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4515428745246666
 Transform:
@@ -3897,8 +3904,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1289237084016786}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.2, y: 0, z: 0.2}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -0.2, y: 0, z: 0.13}
+  m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
   m_Children:
   - {fileID: 4021151321633588}
   m_Father: {fileID: 4165474097542472}
@@ -5691,7 +5698,7 @@ MeshRenderer:
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
   m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 3
+  m_SelectedEditorRenderState: 2
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -6317,7 +6324,7 @@ MeshRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1289237084016786}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -8219,11 +8226,23 @@ MonoBehaviour:
   snapDuration: 0.2
   applyScalingOnSnap: 0
   cloneNewOnUnsnap: 0
-  highlightColor: {r: 0.9019608, g: 1, b: 0, a: 0}
+  highlightColor: {r: 1, g: 1, b: 1, a: 0.016}
   highlightAlwaysActive: 0
   validObjectListPolicy: {fileID: 0}
   displayDropZoneInEditor: 1
   defaultSnappedObject: {fileID: 0}
+--- !u!114 &114221359310451706
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1926465908882530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23fa698560b688845bf08bafe6dc1b28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AdditionalVertexStreamMesh: {fileID: 0}
 --- !u!114 &114227162842795498
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8924,6 +8943,18 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.09803922}
   m_EffectDistance: {x: 1, y: 1}
   m_UseGraphicAlpha: 0
+--- !u!114 &114464196654240546
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1410041512947166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23fa698560b688845bf08bafe6dc1b28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AdditionalVertexStreamMesh: {fileID: 0}
 --- !u!114 &114468343638864394
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8959,7 +8990,7 @@ MonoBehaviour:
   snapDuration: 0.2
   applyScalingOnSnap: 0
   cloneNewOnUnsnap: 0
-  highlightColor: {r: 0.9019608, g: 1, b: 0, a: 0}
+  highlightColor: {r: 1, g: 1, b: 1, a: 0.016}
   highlightAlwaysActive: 0
   validObjectListPolicy: {fileID: 0}
   displayDropZoneInEditor: 1
@@ -9045,6 +9076,18 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114503668260629968
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1809750280191194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: 0081f8e984118574e8aea5ef0c7b1111, type: 2}
 --- !u!114 &114510213696196518
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9118,6 +9161,20 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.09803922}
   m_EffectDistance: {x: 1, y: 1}
   m_UseGraphicAlpha: 0
+--- !u!114 &114539954911039068
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1130096164810106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bca9ccf900ccc84c887d783321d27e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _head: {fileID: 4155583042728552}
+  _ears: {fileID: 4744711193059424}
+  wireframe: 0
 --- !u!114 &114564074216982866
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9533,7 +9590,7 @@ MonoBehaviour:
   snapDuration: 0.2
   applyScalingOnSnap: 0
   cloneNewOnUnsnap: 0
-  highlightColor: {r: 0.9019608, g: 1, b: 0, a: 0}
+  highlightColor: {r: 1, g: 1, b: 1, a: 0.016}
   highlightAlwaysActive: 0
   validObjectListPolicy: {fileID: 0}
   displayDropZoneInEditor: 1
@@ -9608,10 +9665,10 @@ MonoBehaviour:
   highlightObjectPrefab: {fileID: 1914545780541580, guid: f684776fa4d0f4c118867d89780ace78,
     type: 2}
   snapType: 2
-  snapDuration: 0.2
+  snapDuration: 0
   applyScalingOnSnap: 0
-  cloneNewOnUnsnap: 0
-  highlightColor: {r: 0.90344834, g: 1, b: 0, a: 0}
+  cloneNewOnUnsnap: 1
+  highlightColor: {r: 1, g: 1, b: 1, a: 0.016}
   highlightAlwaysActive: 0
   validObjectListPolicy: {fileID: 0}
   displayDropZoneInEditor: 1
@@ -9762,6 +9819,18 @@ MonoBehaviour:
   layersToIgnore:
     serializedVersion: 2
     m_Bits: 4
+--- !u!114 &114779253354699918
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1619907017687400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23fa698560b688845bf08bafe6dc1b28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AdditionalVertexStreamMesh: {fileID: 0}
 --- !u!114 &114782814721715368
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9939,6 +10008,18 @@ MonoBehaviour:
     fallbackTypeName: VRTK.SDK_FallbackController
     typeName: VRTK.SDK_SteamVRController
     descriptionIndex: 0
+--- !u!114 &114847691308315192
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1494490532279056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: 0081f8e984118574e8aea5ef0c7b1111, type: 2}
 --- !u!114 &114848363529339504
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10001,6 +10082,18 @@ MonoBehaviour:
   floorHeightTolerance: 1
   blinkTransitionSpeed: 0.6
   bodyPhysics: {fileID: 0}
+--- !u!114 &114882948812911808
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1130096164810106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: 0081f8e984118574e8aea5ef0c7b1111, type: 2}
 --- !u!114 &114885919771925358
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10030,7 +10123,7 @@ MonoBehaviour:
   snapDuration: 0
   applyScalingOnSnap: 0
   cloneNewOnUnsnap: 1
-  highlightColor: {r: 0.90344834, g: 1, b: 0, a: 0}
+  highlightColor: {r: 1, g: 1, b: 1, a: 0.016}
   highlightAlwaysActive: 0
   validObjectListPolicy: {fileID: 0}
   displayDropZoneInEditor: 1
