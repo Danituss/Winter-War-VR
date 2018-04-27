@@ -59,6 +59,12 @@
         }
         public override void StartUsing(VRTK_InteractUse usingObject)
         {
+            //If the weapon has been just reloaded, enable reloading again afte firing the first shot
+            if (currentAmmo == maxAmmo)
+            {
+                clipSnapDropZone.enabled = true;
+            }
+
             // We check if clip has bullets in it (and is cocked), else play noAmmo audioclip
             if (cocked == true && (currentAmmo >= 1))
             {
@@ -68,11 +74,6 @@
             else
             {
                 audioSource.PlayOneShot(noAmmo);
-            }
-
-            if(currentAmmo == maxAmmo) 
-            {
-                clipSnapDropZone.enabled = true;
             }
         }
 
