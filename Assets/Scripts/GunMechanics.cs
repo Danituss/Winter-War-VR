@@ -13,17 +13,14 @@
         private AudioSource audioSource;
         public ClipSnapDropZone clipSnapDropZone;
         Recoil recoil_script;
-        [Header("Impact sounds")]
-        public AudioClip fallbackClip;
-        public AudioClip stoneClip, iceClip, fleshClip, metalClip, woodClip, noAmmo;
-        public ParticleSystem stoneP, iceP, fleshP, metalP, woodP;
         private VRTK_ControllerEvents controllerEvents1;
         private VRTK_ControllerEvents controllerEvents2;
+		public AudioClip noAmmo;
+		public GameObject impactController;
 
         // True if weapon is ready to be fired
         public bool cocked;
 
-        // Ei lataus ääniä?
         //public AudioClip reload;
         public override void Grabbed(VRTK_InteractGrab currentGrabbingObject)
         {
@@ -37,11 +34,10 @@
             }
             else
             {
-
-
                 controllerEvents1 = currentGrabbingObject.GetComponent<VRTK_ControllerEvents>();
             }
             Debug.Log(controllerEvents1);
+			if (controllerEvents2 != null)
             Debug.Log(controllerEvents2);
         }
 
@@ -107,6 +103,9 @@
             if (Physics.Raycast(barrel.transform.position, transform.forward, out hit))
             {
                 Debug.Log(hit.transform.name);
+				PhysicalMaterial mat = hit.transform.GetComponent<PhysicalMaterial>();
+				GameObject impact = Instantiate(impactController, hit.transform.position, gameObject.transform.rotation);
+				impact.GetComponent<ImpactController> ().PlayImpactEffects (mat.material);
                 /*
                 Target target = hit.transform.GetComponent<Target>();
                 if (target != null)
@@ -127,32 +126,6 @@
                     //ts.StopAllCoroutines();
                     ts.MakeFall();
                     //ts.StartCoroutine(ts.BringDown());
-                }
-
-                PhysicalMaterial mat = hit.transform.GetComponent<PhysicalMaterial>();
-
-                GameObject go = new GameObject("hit");
-                go.transform.position = hit.transform.position;
-
-                go.AddComponent<HitSoundPlayer>();
-                go.GetComponent<HitSoundPlayer>().PlaySound(mat.material, fallbackClip, stoneClip, iceClip, fleshClip, metalClip, woodClip);
-                switch (mat.material)
-                {
-                    case PhysicalMaterial.physMaterial.flesh:
-                        Instantiate(fleshP, hit.point, Quaternion.identity);
-                        break;
-                    case PhysicalMaterial.physMaterial.stone:
-                        Instantiate(stoneP, hit.point, Quaternion.identity);
-                        break;
-                    case PhysicalMaterial.physMaterial.wood:
-                        Instantiate(woodP, hit.point, Quaternion.identity);
-                        break;
-                    case PhysicalMaterial.physMaterial.ice:
-                        Instantiate(iceP, hit.point, Quaternion.identity);
-                        break;
-                    case PhysicalMaterial.physMaterial.metal:
-                        Instantiate(metalP, hit.point, Quaternion.identity);
-                        break;
                 }
             }
         }
