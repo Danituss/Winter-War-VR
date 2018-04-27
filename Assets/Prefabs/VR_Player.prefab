@@ -1335,7 +1335,6 @@ GameObject:
   - component: {fileID: 92814259219243516}
   - component: {fileID: 81147860131060848}
   - component: {fileID: 114852413071308784}
-  - component: {fileID: 114847691308315192}
   m_Layer: 0
   m_Name: Camera
   m_TagString: MainCamera
@@ -2239,7 +2238,6 @@ GameObject:
   - component: {fileID: 81435291182487830}
   - component: {fileID: 20750679184534254}
   - component: {fileID: 114748757302644184}
-  - component: {fileID: 114503668260629968}
   m_Layer: 0
   m_Name: CenterEyeAnchor
   m_TagString: MainCamera
@@ -9074,18 +9072,6 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!114 &114503668260629968
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1809750280191194}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  profile: {fileID: 11400000, guid: 0081f8e984118574e8aea5ef0c7b1111, type: 2}
 --- !u!114 &114510213696196518
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9992,18 +9978,6 @@ MonoBehaviour:
     fallbackTypeName: VRTK.SDK_FallbackController
     typeName: VRTK.SDK_SteamVRController
     descriptionIndex: 0
---- !u!114 &114847691308315192
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1494490532279056}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  profile: {fileID: 11400000, guid: 0081f8e984118574e8aea5ef0c7b1111, type: 2}
 --- !u!114 &114848363529339504
 MonoBehaviour:
   m_ObjectHideFlags: 1
