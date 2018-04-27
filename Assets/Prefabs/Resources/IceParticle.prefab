@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4218156434302294}
   - component: {fileID: 198465181588911744}
   - component: {fileID: 199141057888684734}
+  - component: {fileID: 114790673456361634}
   m_Layer: 0
   m_Name: IceParticle
   m_TagString: Untagged
@@ -41,6 +42,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114790673456361634
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1965778237413008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69cad530c565c714491a326c21accb90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!198 &198465181588911744
 ParticleSystem:
   m_ObjectHideFlags: 1

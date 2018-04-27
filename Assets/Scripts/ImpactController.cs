@@ -20,6 +20,7 @@ public class ImpactController : MonoBehaviour {
         audioSource.spatialBlend = 1.0f; //Makes the audio 3D
         audioSource.volume = 0.7f;
 		audioSource.maxDistance = 100f;
+		transform.forward = -transform.forward;
 	}
 	
 	// Update is called once per frame
@@ -35,23 +36,23 @@ public class ImpactController : MonoBehaviour {
         {
            case PhysicalMaterial.physMaterial.flesh:
 			audioSource.clip = fleshImpactSound;
-			Instantiate(fleshP, transform.position, Quaternion.identity);
+			Instantiate(fleshP, transform.position, gameObject.transform.rotation);
                 break;
             case PhysicalMaterial.physMaterial.ice:
 			audioSource.clip = iceImpactSound;
-			Instantiate(iceP, transform.position, Quaternion.identity);
+			Instantiate(iceP, transform.position, gameObject.transform.rotation);
                 break;
             case PhysicalMaterial.physMaterial.metal:
 			audioSource.clip = metalImpactSound;
-			Instantiate(metalP, transform.position, Quaternion.identity);
+			Instantiate(metalP, transform.position, gameObject.transform.rotation);
                 break;
             case PhysicalMaterial.physMaterial.stone:
 			audioSource.clip = stoneImpactSound;
-			Instantiate(stoneP, transform.position, Quaternion.identity);
+			Instantiate(stoneP, transform.position, gameObject.transform.rotation);
                 break;
             case PhysicalMaterial.physMaterial.wood:
 			audioSource.clip = woodImpactSound;
-			Instantiate(woodP, transform.position, Quaternion.identity);
+			Instantiate(woodP, transform.position, gameObject.transform.rotation);
                 break;
             default:
                 audioSource.clip = fallback;

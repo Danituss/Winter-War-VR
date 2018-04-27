@@ -104,6 +104,7 @@
             if (Physics.Raycast(barrel.transform.position, transform.forward, out hit))
             {
                 Debug.Log(hit.transform.name);
+				// Spawns a new impact object that handles particles
 				PhysicalMaterial mat = hit.transform.GetComponent<PhysicalMaterial>();
 				GameObject impact = Instantiate(impactController, hit.transform.position, gameObject.transform.rotation);
 				impact.GetComponent<ImpactController> ().PlayImpactEffects (mat.material);
