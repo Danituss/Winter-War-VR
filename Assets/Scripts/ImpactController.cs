@@ -10,8 +10,9 @@ public class ImpactController : MonoBehaviour {
 	public AudioClip stoneImpactSound;
 	public AudioClip iceImpactSound, fleshImpactSound, metalImpactSound, woodImpactSound, fallback;
 	[Header("Impact particles")]
-	public ParticleSystem stoneP;
-	public ParticleSystem iceP, fleshP, metalP, woodP;
+	public GameObject stoneP;
+	public GameObject iceP, fleshP, metalP, woodP;
+
 
 	void Awake () {
         gameObject.AddComponent<AudioSource>();

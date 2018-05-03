@@ -106,7 +106,7 @@
                 Debug.Log(hit.transform.name);
 				// Spawns a new impact object that handles particles
 				PhysicalMaterial mat = hit.transform.GetComponent<PhysicalMaterial>();
-				GameObject impact = Instantiate(impactController, hit.transform.position, gameObject.transform.rotation);
+				GameObject impact = Instantiate(impactController, hit.point, gameObject.transform.rotation);
 				impact.GetComponent<ImpactController> ().PlayImpactEffects (mat.material);
                 /*
                 Target target = hit.transform.GetComponent<Target>();

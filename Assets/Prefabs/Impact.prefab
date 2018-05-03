@@ -138,8 +138,8 @@ MonoBehaviour:
   metalImpactSound: {fileID: 8300000, guid: 8b66e7d3318c69b4cbf090af8a101350, type: 3}
   woodImpactSound: {fileID: 8300000, guid: 7b05dc6be1fa4f24aa677960c23c6841, type: 3}
   fallback: {fileID: 8300000, guid: 8b66e7d3318c69b4cbf090af8a101350, type: 3}
-  stoneP: {fileID: 198038689394994846, guid: fb9a1d6323a54c54880c849615dcaf8b, type: 2}
-  iceP: {fileID: 198465181588911744, guid: 7d79d4124b4c11646b24b10758aabc1d, type: 2}
-  fleshP: {fileID: 198505432899067674, guid: 50e7c9ba02d11d040a138312e31a5c00, type: 2}
-  metalP: {fileID: 198180821972470228, guid: 4ee7c8272723c6446af996e8f3ccef98, type: 2}
-  woodP: {fileID: 198733142086572448, guid: b0357a24da4e2104d865d3b1947bb65d, type: 2}
+  stoneP: {fileID: 1427468685130936, guid: 00d12ae6cd7ca3b4eacd5899f7ca3f38, type: 2}
+  iceP: {fileID: 1733638322491960, guid: 2cd54116f070df6438ee2ee89107d352, type: 2}
+  fleshP: {fileID: 1427468685130936, guid: 00d12ae6cd7ca3b4eacd5899f7ca3f38, type: 2}
+  metalP: {fileID: 1427468685130936, guid: 00d12ae6cd7ca3b4eacd5899f7ca3f38, type: 2}
+  woodP: {fileID: 1427468685130936, guid: 00d12ae6cd7ca3b4eacd5899f7ca3f38, type: 2}
