@@ -37,6 +37,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4410063473043542}
   - component: {fileID: 108878000438234380}
+  - component: {fileID: 114887636269833602}
   m_Layer: 0
   m_Name: Point light
   m_TagString: Untagged
@@ -69,7 +70,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4798260070843208}
-  - component: {fileID: 114790552469234798}
+  - component: {fileID: 114827517012349424}
   m_Layer: 0
   m_Name: metal_particle_effect
   m_TagString: Untagged
@@ -168,7 +169,7 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!114 &114790552469234798
+--- !u!114 &114827517012349424
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -176,9 +177,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 1802728943028378}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: 752763452f865e8408b68b1fbfc5571b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxLifetime: 1
+--- !u!114 &114887636269833602
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1289596326681470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ecd78862bf355e40ad28873fbe03b21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxLifetime: 0.1
+  lifetime: 0
 --- !u!198 &198316851861676790
 ParticleSystem:
   m_ObjectHideFlags: 1

@@ -36,6 +36,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4707993256660802}
+  - component: {fileID: 114828346225602214}
   m_Layer: 0
   m_Name: snow_particle_effect
   m_TagString: Untagged
@@ -101,6 +102,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114828346225602214
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1733638322491960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 752763452f865e8408b68b1fbfc5571b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxLifetime: 1
 --- !u!198 &198924281838184218
 ParticleSystem:
   m_ObjectHideFlags: 1
