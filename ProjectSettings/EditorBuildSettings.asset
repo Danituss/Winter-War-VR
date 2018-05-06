@@ -17,3 +17,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Shooting_Range.unity
     guid: 214480f89df7c3d45b1b3ede348fa4cd
+  - enabled: 0
+    path: Assets/Scenes/Lobby.unity
+    guid: 56b8fa5e1336b6646bb98b09c98e0568

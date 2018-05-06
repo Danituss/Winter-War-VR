@@ -4389,18 +4389,8 @@ MonoBehaviour:
   barrel: {fileID: 901059294}
   particle: {fileID: 748502702}
   clipSnapDropZone: {fileID: 0}
-  fallbackClip: {fileID: 0}
-  stoneClip: {fileID: 8300000, guid: 8b66e7d3318c69b4cbf090af8a101350, type: 3}
-  iceClip: {fileID: 8300000, guid: 8b66e7d3318c69b4cbf090af8a101350, type: 3}
-  fleshClip: {fileID: 8300000, guid: 7b05dc6be1fa4f24aa677960c23c6841, type: 3}
-  metalClip: {fileID: 8300000, guid: 4ce8b70d583dae34ea172d8799572e7b, type: 3}
-  woodClip: {fileID: 8300000, guid: e007b5a6182c65c459936a7dff9d0a9b, type: 3}
   noAmmo: {fileID: 8300000, guid: a10f3346a33ee1e4cb6ab960118762e4, type: 3}
-  stoneP: {fileID: 0}
-  iceP: {fileID: 0}
-  fleshP: {fileID: 0}
-  metalP: {fileID: 0}
-  woodP: {fileID: 0}
+  impactController: {fileID: 0}
   cocked: 0
 --- !u!114 &884787922
 MonoBehaviour:
@@ -4877,7 +4867,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4504357099941564, guid: 189d75193a1abfb468ab3179ea658026, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 1.9604
+      value: 1.439
       objectReference: {fileID: 0}
     - target: {fileID: 4504357099941564, guid: 189d75193a1abfb468ab3179ea658026, type: 2}
       propertyPath: m_LocalPosition.z
