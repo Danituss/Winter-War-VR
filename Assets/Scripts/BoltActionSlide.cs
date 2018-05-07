@@ -46,6 +46,7 @@
                     if (gun.currentAmmo != gun.maxAmmo)
                     {
                         gun.EjectShell();
+                        gun.currentAmmo--;
                     }
 
                     Debug.Log("Cocked!");

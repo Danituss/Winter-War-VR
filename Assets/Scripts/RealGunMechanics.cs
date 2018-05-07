@@ -31,8 +31,6 @@
         private Rigidbody slideRigidbody;
         private Collider slideCollider;
 
-        private VRTK_ControllerEvents controllerEvents;
-
         private float minTriggerRotation = -10f;
         private float maxTriggerRotation = 45f;
 
@@ -42,6 +40,8 @@
             cocked = true;
             audioSource = GetComponent<AudioSource>();
             recoil_script = GetComponent<Recoil>();
+
+            ToggleSlide(false);
         }
 
         protected override void Awake()
@@ -58,9 +58,9 @@
         protected override void Update()
         {
             base.Update();
-            if (controllerEvents)
+            if (controllerEvents1)
             {
-                var pressure = (maxTriggerRotation * controllerEvents.GetTriggerAxis()) - minTriggerRotation;
+                var pressure = (maxTriggerRotation * controllerEvents1.GetTriggerAxis()) - minTriggerRotation;
                 trigger.transform.localEulerAngles = new Vector3(pressure, 0f, 0f);
             }
             else
@@ -93,9 +93,6 @@
 
             base.Grabbed(currentGrabbingObject);
 
-            controllerEvents = currentGrabbingObject.GetComponent<VRTK_ControllerEvents>();
-
-            ToggleSlide(true);
 
             //Limit hands grabbing when picked up
             if (VRTK_DeviceFinder.GetControllerHand(currentGrabbingObject.controllerEvents.gameObject) == SDK_BaseController.ControllerHand.Left)
@@ -118,29 +115,32 @@
             else
             {
                 controllerEvents1 = currentGrabbingObject.GetComponent<VRTK_ControllerEvents>();
+                ToggleSlide(true);
             }
         }
 
         public override void Ungrabbed(VRTK_InteractGrab previousGrabbingObject)
         {
-
             base.Ungrabbed(previousGrabbingObject);
-
-
 
             //Unlimit hands
             allowedTouchControllers = AllowedController.Both;
             allowedUseControllers = AllowedController.Both;
             slide.allowedGrabControllers = AllowedController.Both;
 
-            controllerEvents = null;
 
-            if (controllerEvents1 == null)
+            if (controllerEvents2 != null)
             {
                 controllerEvents2 = null;
+                ToggleSlide(true);
+                return;
+            }
+
+            if (controllerEvents1 != null) 
+            {
+                controllerEvents1 = null;
                 ToggleSlide(false);
             }
-            controllerEvents1 = null;
 
         }
         public override void StartUsing(VRTK_InteractUse usingObject)
@@ -181,7 +181,6 @@
 
             particle.Play();
             audioSource.Play();
-            currentAmmo -= 1;
             cocked = false;
 
             //Should do this here if the weapon is semi-auto / automatic
