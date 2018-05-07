@@ -93,7 +93,7 @@
 
             base.Grabbed(currentGrabbingObject);
 
-
+            /*
             //Limit hands grabbing when picked up
             if (VRTK_DeviceFinder.GetControllerHand(currentGrabbingObject.controllerEvents.gameObject) == SDK_BaseController.ControllerHand.Left)
             {
@@ -106,7 +106,7 @@
                 //allowedTouchControllers = AllowedController.RightOnly;
                 allowedUseControllers = AllowedController.RightOnly;
                 slide.allowedGrabControllers = AllowedController.LeftOnly;
-            }
+            }*/
 
             if (controllerEvents1 != null)
             {
@@ -122,12 +122,12 @@
         public override void Ungrabbed(VRTK_InteractGrab previousGrabbingObject)
         {
             base.Ungrabbed(previousGrabbingObject);
-
+            /*
             //Unlimit hands
             allowedTouchControllers = AllowedController.Both;
             allowedUseControllers = AllowedController.Both;
             slide.allowedGrabControllers = AllowedController.Both;
-
+            */
 
             if (controllerEvents2 != null)
             {
