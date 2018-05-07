@@ -435,21 +435,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &1654294135903414
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 4646914656599502}
-  m_Layer: 0
-  m_Name: TriggerHolder
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &1687374163553422
 GameObject:
   m_ObjectHideFlags: 0
@@ -566,6 +551,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
+--- !u!1 &1993528933637788
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4438751379580226}
+  m_Layer: 0
+  m_Name: TriggerHolder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!4 &4025078640025628
 Transform:
   m_ObjectHideFlags: 1
@@ -578,7 +578,7 @@ Transform:
   m_Children:
   - {fileID: 4803915452370686}
   m_Father: {fileID: 4037649746183814}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!4 &4033908521855364
 Transform:
@@ -634,7 +634,6 @@ Transform:
   m_LocalPosition: {x: -20.298864, y: 0.516, z: -2.665757}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 4646914656599502}
   - {fileID: 4025078640025628}
   - {fileID: 4520043353759000}
   - {fileID: 4485120468932170}
@@ -642,6 +641,7 @@ Transform:
   - {fileID: 4217031333553746}
   - {fileID: 4303247236167082}
   - {fileID: 4145229966399032}
+  - {fileID: 4438751379580226}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -670,7 +670,7 @@ Transform:
   m_Children:
   - {fileID: 4803938848345982}
   m_Father: {fileID: 4037649746183814}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 90}
 --- !u!4 &4217031333553746
 Transform:
@@ -683,7 +683,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4037649746183814}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4303247236167082
 Transform:
@@ -701,7 +701,7 @@ Transform:
   - {fileID: 4065112654577250}
   - {fileID: 4816563487773956}
   m_Father: {fileID: 4037649746183814}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4305210682989486
 Transform:
@@ -773,6 +773,20 @@ Transform:
   m_Father: {fileID: 4305210682989486}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4438751379580226
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1993528933637788}
+  m_LocalRotation: {x: -0.062166072, y: -0.061086085, z: -0.71056116, w: 0.69821686}
+  m_LocalPosition: {x: -0.0001, y: -0.0329, z: -0.1971}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4736524057387650}
+  m_Father: {fileID: 4037649746183814}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: -10, z: 0}
 --- !u!4 &4485120468932170
 Transform:
   m_ObjectHideFlags: 1
@@ -784,7 +798,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4037649746183814}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4520043353759000
 Transform:
@@ -797,7 +811,7 @@ Transform:
   m_LocalScale: {x: 0.91415787, y: 0.91415787, z: 0.91415787}
   m_Children: []
   m_Father: {fileID: 4037649746183814}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: -179.99998, z: 0}
 --- !u!4 &4528812430591038
 Transform:
@@ -890,20 +904,6 @@ Transform:
   m_Father: {fileID: 4305210682989486}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &4646914656599502
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1654294135903414}
-  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: 0, y: -0.0342, z: -0.1963}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 4736524057387650}
-  m_Father: {fileID: 4037649746183814}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4675434627196780
 Transform:
   m_ObjectHideFlags: 1
@@ -918,7 +918,7 @@ Transform:
   - {fileID: 4539335798099050}
   - {fileID: 4528812430591038}
   m_Father: {fileID: 4037649746183814}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4727056182303730
 Transform:
@@ -939,11 +939,11 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1382084207413226}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.0087, z: -0.00000023842}
-  m_LocalScale: {x: 0.0044296863, y: 0.023361664, z: 0.0027994302}
+  m_LocalRotation: {x: 0.062166072, y: 0.061086085, z: 0.71056116, w: 0.69821686}
+  m_LocalPosition: {x: 0.0125, y: 0.0002, z: -0.0015}
+  m_LocalScale: {x: 0.004429687, y: 0.023361668, z: 0.00279943}
   m_Children: []
-  m_Father: {fileID: 4646914656599502}
+  m_Father: {fileID: 4438751379580226}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4783746246200650
@@ -1883,8 +1883,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.05258089, y: 0.02433816, z: 0.18066935}
-  m_Center: {x: -0.016537009, y: 0.0020072027, z: -0.09033469}
+  m_Size: {x: 0.05258089, y: 0.06, z: 0.18066935}
+  m_Center: {x: -0.03, y: 0.015, z: -0.09033469}
 --- !u!65 &65871860125658064
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -2006,7 +2006,7 @@ MonoBehaviour:
   thickness: 0.5
   customOutlineModels: []
   customOutlineModelPaths: []
-  enableSubmeshHighlight: 0
+  enableSubmeshHighlight: 1
 --- !u!114 &114048370262685140
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2049,8 +2049,8 @@ MonoBehaviour:
   ObservedComponents:
   - {fileID: 114862454636408706}
   ObservedComponentsFoldoutOpen: 1
-  viewIdField: 0
-  instantiationId: -1
+  viewIdField: 1
+  instantiationId: 1
   currentMasterID: -1
   isRuntimeInstantiated: 0
 --- !u!114 &114192554529864056
@@ -2147,7 +2147,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hideControllerOnTouch: 0
   hideDelayOnTouch: 0
-  hideControllerOnGrab: 0
+  hideControllerOnGrab: 1
   hideDelayOnGrab: 0
   hideControllerOnUse: 0
   hideDelayOnUse: 0
@@ -2322,19 +2322,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   disableWhenIdle: 0
-  touchHighlightColor: {r: 1, g: 1, b: 0, a: 1}
+  touchHighlightColor: {r: 0, g: 0, b: 0, a: 1}
   allowedTouchControllers: 0
   ignoredColliders: []
   isGrabbable: 1
   holdButtonToGrab: 1
   stayGrabbedOnTeleport: 1
   validDrop: 1
-  grabOverrideButton: 0
+  grabOverrideButton: 3
   allowedGrabControllers: 1
   grabAttachMechanicScript: {fileID: 114048370262685140}
   secondaryGrabActionScript: {fileID: 0}
   isUsable: 0
-  holdButtonToUse: 1
+  holdButtonToUse: 0
   useOnlyIfGrabbed: 0
   pointerActivatesUseAction: 0
   useOverrideButton: 0
