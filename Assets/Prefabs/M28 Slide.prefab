@@ -330,6 +330,7 @@ GameObject:
   - component: {fileID: 205949831320814502}
   - component: {fileID: 114085503986379400}
   - component: {fileID: 114862454636408706}
+  - component: {fileID: 114913107843409716}
   m_Layer: 0
   m_Name: M28 Slide
   m_TagString: Untagged
@@ -2048,8 +2049,8 @@ MonoBehaviour:
   ObservedComponents:
   - {fileID: 114862454636408706}
   ObservedComponentsFoldoutOpen: 1
-  viewIdField: 1
-  instantiationId: 1
+  viewIdField: 0
+  instantiationId: -1
   currentMasterID: -1
   isRuntimeInstantiated: 0
 --- !u!114 &114192554529864056
@@ -2457,6 +2458,23 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: VRTK.UnityEventHelper.VRTK_SnapDropZone_UnityEvents+SnapDropZoneEvent,
       Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+--- !u!114 &114913107843409716
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1484281372044146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 817f15b2a0426974bb4e88ef34aa22b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hideControllerOnTouch: 0
+  hideDelayOnTouch: 0
+  hideControllerOnGrab: 1
+  hideDelayOnGrab: 0
+  hideControllerOnUse: 0
+  hideDelayOnUse: 0
 --- !u!135 &135945335818750752
 SphereCollider:
   m_ObjectHideFlags: 1
