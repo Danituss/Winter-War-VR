@@ -1871,8 +1871,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.03, y: 0.045, z: 0.86}
-  m_Center: {x: 0, y: 0.023, z: 0.21}
+  m_Size: {x: 0.03, y: 0.045, z: 0.67}
+  m_Center: {x: 0, y: 0.023, z: 0.3}
 --- !u!65 &65618352699690222
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -2329,7 +2329,7 @@ MonoBehaviour:
   holdButtonToGrab: 1
   stayGrabbedOnTeleport: 1
   validDrop: 1
-  grabOverrideButton: 0
+  grabOverrideButton: 3
   allowedGrabControllers: 1
   grabAttachMechanicScript: {fileID: 114048370262685140}
   secondaryGrabActionScript: {fileID: 0}

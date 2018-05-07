@@ -145,21 +145,24 @@
         }
         public override void StartUsing(VRTK_InteractUse usingObject)
         {
-            //If the weapon has been just reloaded, enable reloading again afte firing the first shot
-            if (currentAmmo == maxAmmo)
+            if (usingObject.controllerEvents == controllerEvents1)
             {
-                clipSnapDropZone.enabled = true;
-            }
+                //If the weapon has been just reloaded, enable reloading again afte firing the first shot
+                if (currentAmmo == maxAmmo)
+                {
+                    clipSnapDropZone.enabled = true;
+                }
 
-            // We check if clip has bullets in it (and is cocked), else play noAmmo audioclip
-            if (cocked == true && (currentAmmo >= 1))
-            {
-                base.StartUsing(usingObject);
-                FireBullet();
-            }
-            else
-            {
-                audioSource.PlayOneShot(noAmmo);
+                // We check if clip has bullets in it (and is cocked), else play noAmmo audioclip
+                if (cocked == true && (currentAmmo >= 1))
+                {
+                    base.StartUsing(usingObject);
+                    FireBullet();
+                }
+                else
+                {
+                    audioSource.PlayOneShot(noAmmo);
+                }
             }
         }
 
