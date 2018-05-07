@@ -38,9 +38,18 @@
         private void OnTriggerEnter(Collider other)
         {
             if (other.name == "BoltLock Trigger Back") {
-                GetComponentInParent<RealGunMechanics>().cocked = true;
-                GetComponentInParent<RealGunMechanics>().EjectShell();
-                Debug.Log("Cocked!");
+                RealGunMechanics gun = GetComponentInParent<RealGunMechanics>();
+                if(gun.currentAmmo > 0) {
+                    gun.cocked = true;
+
+                    //First cocking should not eject
+                    if (gun.currentAmmo != gun.maxAmmo)
+                    {
+                        gun.EjectShell();
+                    }
+
+                    Debug.Log("Cocked!");
+                }
             }
         }
     }

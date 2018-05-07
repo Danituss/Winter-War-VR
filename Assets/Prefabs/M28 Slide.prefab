@@ -779,14 +779,14 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1993528933637788}
-  m_LocalRotation: {x: -0.062166072, y: -0.061086085, z: -0.71056116, w: 0.69821686}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.0001, y: -0.0329, z: -0.1971}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4736524057387650}
   m_Father: {fileID: 4037649746183814}
   m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: -10, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4485120468932170
 Transform:
   m_ObjectHideFlags: 1
@@ -939,8 +939,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1382084207413226}
-  m_LocalRotation: {x: 0.062166072, y: 0.061086085, z: 0.71056116, w: 0.69821686}
-  m_LocalPosition: {x: 0.0125, y: 0.0002, z: -0.0015}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.0132, z: 0.0006}
   m_LocalScale: {x: 0.004429687, y: 0.023361668, z: 0.00279943}
   m_Children: []
   m_Father: {fileID: 4438751379580226}
@@ -2049,8 +2049,8 @@ MonoBehaviour:
   ObservedComponents:
   - {fileID: 114862454636408706}
   ObservedComponentsFoldoutOpen: 1
-  viewIdField: 1
-  instantiationId: 1
+  viewIdField: 0
+  instantiationId: -1
   currentMasterID: -1
   isRuntimeInstantiated: 0
 --- !u!114 &114192554529864056

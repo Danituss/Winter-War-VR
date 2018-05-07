@@ -61,11 +61,11 @@
             if (controllerEvents)
             {
                 var pressure = (maxTriggerRotation * controllerEvents.GetTriggerAxis()) - minTriggerRotation;
-                trigger.transform.localEulerAngles = new Vector3(0f, pressure, 0f);
+                trigger.transform.localEulerAngles = new Vector3(pressure, 0f, 0f);
             }
             else
             {
-                trigger.transform.localEulerAngles = new Vector3(0f, minTriggerRotation, 0f);
+                trigger.transform.localEulerAngles = new Vector3(minTriggerRotation, 0f, 0f);
             }
         }
 
@@ -96,21 +96,21 @@
             controllerEvents = currentGrabbingObject.GetComponent<VRTK_ControllerEvents>();
 
             ToggleSlide(true);
-            /*
+
             //Limit hands grabbing when picked up
             if (VRTK_DeviceFinder.GetControllerHand(currentGrabbingObject.controllerEvents.gameObject) == SDK_BaseController.ControllerHand.Left)
             {
-                allowedTouchControllers = AllowedController.LeftOnly;
+                //allowedTouchControllers = AllowedController.LeftOnly;
                 allowedUseControllers = AllowedController.LeftOnly;
                 slide.allowedGrabControllers = AllowedController.RightOnly;
             }
             else if (VRTK_DeviceFinder.GetControllerHand(currentGrabbingObject.controllerEvents.gameObject) == SDK_BaseController.ControllerHand.Right)
             {
-                allowedTouchControllers = AllowedController.RightOnly;
+                //allowedTouchControllers = AllowedController.RightOnly;
                 allowedUseControllers = AllowedController.RightOnly;
                 slide.allowedGrabControllers = AllowedController.LeftOnly;
             }
-            */
+
             if (controllerEvents1 != null)
             {
                 controllerEvents2 = currentGrabbingObject.GetComponent<VRTK_ControllerEvents>();
@@ -126,18 +126,19 @@
 
             base.Ungrabbed(previousGrabbingObject);
 
-            ToggleSlide(false);
-            /*
+
+
             //Unlimit hands
             allowedTouchControllers = AllowedController.Both;
             allowedUseControllers = AllowedController.Both;
             slide.allowedGrabControllers = AllowedController.Both;
-            */
+
             controllerEvents = null;
 
             if (controllerEvents1 == null)
             {
                 controllerEvents2 = null;
+                ToggleSlide(false);
             }
             controllerEvents1 = null;
 
@@ -182,7 +183,9 @@
             audioSource.Play();
             currentAmmo -= 1;
             cocked = false;
-            EjectShell();
+
+            //Should do this here if the weapon is semi-auto / automatic
+            //EjectShell();
 
             RaycastHit hit;
             if (Physics.Raycast(barrel.transform.position, transform.forward, out hit))
@@ -222,11 +225,9 @@
         }
 
         public virtual void EjectShell() {
-            if (currentAmmo > 0) {
-                GameObject emptyBullet_clone;
-                emptyBullet_clone = Instantiate(emptyBullet, emptyBulletEjectPos.position, emptyBulletEjectPos.rotation);
-                emptyBullet_clone.GetComponent<Rigidbody>().AddForce(new Vector3(0.5f, 0.5f, 0) * 0.2f, ForceMode.Impulse);
-            }
+            GameObject emptyBullet_clone;
+            emptyBullet_clone = Instantiate(emptyBullet, emptyBulletEjectPos.position, emptyBulletEjectPos.rotation);
+            emptyBullet_clone.GetComponent<Rigidbody>().AddForce(new Vector3(0.5f, 0.5f, 0) * 0.2f, ForceMode.Impulse);
         }
     }
 }
