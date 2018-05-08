@@ -7,13 +7,17 @@ public class LobbyNetwork : MonoBehaviour {
 	// Use this for initialization
 	private void Start ()
     {
-        Debug.Log("Connecting to server...");
-        PhotonNetwork.ConnectUsingSettings("0.0.0");
+        if (!PhotonNetwork.connected)
+        {
+            Debug.Log("Connecting to server...");
+            PhotonNetwork.ConnectUsingSettings("0.0.0");
+        }
 	}
 
     private void OnConnectedToMaster()
     {
         Debug.Log("Connected to master.");
+        PhotonNetwork.automaticallySyncScene = false;
         PhotonNetwork.playerName = PlayerNetwork.Instance.PlayerName;
         PhotonNetwork.JoinLobby(TypedLobby.Default);
     }
@@ -21,5 +25,10 @@ public class LobbyNetwork : MonoBehaviour {
     private void OnJoinedLobby()
     {
         Debug.Log("Joined lobby.");
+
+        if (!PhotonNetwork.inRoom)
+        {
+            MainCanvasManager.Instance.LobbyCanvas.transform.SetAsLastSibling();
+        }
     }
 }
