@@ -8,6 +8,7 @@
         private float fireTimer = 0f;
         private float fireDistance = 0.05f;
         private float boltSpeed = 0.01f;
+        private bool beenBack;
 
         protected override void Awake()
         {
@@ -37,20 +38,28 @@
 
         private void OnTriggerEnter(Collider other)
         {
-            if (other.name == "BoltLock Trigger Back") {
+            if (other.name == "BoltLock Trigger Back")
+            {
                 RealGunMechanics gun = GetComponentInParent<RealGunMechanics>();
-                if(gun.currentAmmo > 0) {
-                    gun.cocked = true;
+                beenBack = true;
 
+                if (gun.currentAmmo > -1)
+                {
                     //First cocking should not eject
                     if (gun.currentAmmo != gun.maxAmmo)
                     {
                         gun.EjectShell();
-                        gun.currentAmmo--;
                     }
 
-                    Debug.Log("Cocked!");
+                    gun.currentAmmo--;
                 }
+            }
+
+            if (other.name == "BoltLock Trigger Front" && beenBack)
+            {
+                RealGunMechanics gun = GetComponentInParent<RealGunMechanics>();
+                gun.cocked = true;
+                beenBack = false;                
             }
         }
     }

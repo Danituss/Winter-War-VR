@@ -21,7 +21,7 @@
         public GameObject emptyBullet;
         public Transform emptyBulletEjectPos;
 
-        // True if weapon is ready to be fired
+        // True if bolt has been back does not guarantee the is bullet in the chamber
         [HideInInspector]
         public bool cocked;
 
@@ -37,7 +37,6 @@
 
         protected void Start()
         {
-            cocked = true;
             audioSource = GetComponent<AudioSource>();
             recoil_script = GetComponent<Recoil>();
 
@@ -148,20 +147,22 @@
             if (usingObject.controllerEvents == controllerEvents1)
             {
                 //If the weapon has been just reloaded, enable reloading again afte firing the first shot
-                if (currentAmmo == maxAmmo)
+                if (currentAmmo == maxAmmo -1)
                 {
                     clipSnapDropZone.enabled = true;
                 }
 
                 // We check if clip has bullets in it (and is cocked), else play noAmmo audioclip
-                if (cocked == true && (currentAmmo >= 1))
+                if (cocked == true && currentAmmo > -1)
                 {
                     base.StartUsing(usingObject);
                     FireBullet();
+                    cocked = false;
                 }
-                else
+                else if (cocked)
                 {
                     audioSource.PlayOneShot(noAmmo);
+                    cocked = false;
                 }
             }
         }
@@ -184,7 +185,6 @@
 
             particle.Play();
             audioSource.Play();
-            cocked = false;
 
             //Should do this here if the weapon is semi-auto / automatic
             //EjectShell();
@@ -229,7 +229,7 @@
         public virtual void EjectShell() {
             GameObject emptyBullet_clone;
             emptyBullet_clone = Instantiate(emptyBullet, emptyBulletEjectPos.position, emptyBulletEjectPos.rotation);
-            emptyBullet_clone.GetComponent<Rigidbody>().AddForce(new Vector3(0.5f, 0.5f, 0) * 0.2f, ForceMode.Impulse);
+            emptyBullet_clone.GetComponent<Rigidbody>().AddRelativeForce(new Vector3(0.5f,0.5f,0) * 0.2f, ForceMode.Impulse);
         }
     }
 }
