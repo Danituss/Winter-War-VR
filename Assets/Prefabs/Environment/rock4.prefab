@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 23475290068426472}
   - component: {fileID: 64037809910402384}
   - component: {fileID: 114971831166408402}
+  - component: {fileID: 114653781895314330}
   m_Layer: 0
   m_Name: rock4
   m_TagString: Untagged
@@ -37,7 +38,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1548234364699300}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -24.615, y: 0.16139066, z: -2.211}
+  m_LocalPosition: {x: 28.57393, y: -2.3880124, z: 13.949113}
   m_LocalScale: {x: 67.39994, y: 67.39994, z: 67.39994}
   m_Children: []
   m_Father: {fileID: 0}
@@ -70,7 +71,7 @@ MeshRenderer:
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
   m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 3
+  m_SelectedEditorRenderState: 2
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -99,6 +100,18 @@ MeshCollider:
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 0d9473df9347741bcb354ef19765eec5, type: 3}
+--- !u!114 &114653781895314330
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1548234364699300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23fa698560b688845bf08bafe6dc1b28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AdditionalVertexStreamMesh: {fileID: 0}
 --- !u!114 &114971831166408402
 MonoBehaviour:
   m_ObjectHideFlags: 1
