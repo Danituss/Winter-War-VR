@@ -67,7 +67,7 @@ Material:
     - _EnableRotation: 0
     - _Exposure: 1
     - _FogFill: 0
-    - _FogHeight: 0.206
+    - _FogHeight: 0
     - _FogSmoothness: 0.01
     - _GlossMapScale: 1
     - _Glossiness: 0.5
