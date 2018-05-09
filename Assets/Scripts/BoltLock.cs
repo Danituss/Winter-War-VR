@@ -9,7 +9,7 @@ namespace VRTK
         Rigidbody rb;
         Vector3 startPos;
         bool upRight;
-        bool hasBeenBack;
+        bool beenBack;
         GameObject gun;
         GunMechanics gunscript;
         public Rigidbody emptyBullet;
@@ -17,7 +17,6 @@ namespace VRTK
         // Use this for initialization
         void Start()
         {
-            hasBeenBack = false;
             upRight = false;
             rb = gameObject.GetComponent<Rigidbody>();
             gun = transform.parent.gameObject;
@@ -34,19 +33,26 @@ namespace VRTK
         //When the bolt reaches the back of the weapon, it can move down
         void OnTriggerEnter(Collider col)
         {
-            //If bolt is pulled back it will spawn emptybullet to jump from the gun
-            if (transform.position.z <= -0.3)
+            if (col.name == "Bolt Open")
             {
-                Rigidbody emptyBullet_clone;
-                emptyBullet_clone = Instantiate(emptyBullet, transform.position, Quaternion.identity);
-                emptyBullet_clone.AddForce(Vector3.forward * 2, ForceMode.Impulse);
-                hasBeenBack = true;
+                beenBack = true;
+
+                if (gunscript.currentAmmo > -1)
+                {
+                    //First cocking should not eject
+                    if (gunscript.currentAmmo != gunscript.maxAmmo)
+                    {
+                        gunscript.EjectShell();
+                    }
+
+                    gunscript.currentAmmo--;
+                }
             }
-            //When reloading motion is completed the gun is cocked
-            if (hasBeenBack == true && transform.position.z >= -0.214)
+
+            if (col.name == "Bolt Locked" && beenBack)
             {
                 gunscript.cocked = true;
-                hasBeenBack = false;
+                beenBack = false;
             }
 
             // call when bolt is coming from the sideways position to upright position

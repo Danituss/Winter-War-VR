@@ -16,7 +16,9 @@
         private VRTK_ControllerEvents controllerEvents1;
         private VRTK_ControllerEvents controllerEvents2;
 		public AudioClip noAmmo;
-		public GameObject impactController;
+        public GameObject impactController;
+        public GameObject emptyBullet;
+        public Transform emptyBulletEjectPos;
 
         // True if weapon is ready to be fired
         public bool cocked;
@@ -56,20 +58,22 @@
         public override void StartUsing(VRTK_InteractUse usingObject)
         {
             //If the weapon has been just reloaded, enable reloading again afte firing the first shot
-            if (currentAmmo == maxAmmo)
+            if (currentAmmo == maxAmmo - 1)
             {
                 clipSnapDropZone.enabled = true;
             }
 
             // We check if clip has bullets in it (and is cocked), else play noAmmo audioclip
-            if (cocked == true && (currentAmmo >= 1))
+            if (cocked == true && currentAmmo > -1)
             {
-				base.StartUsing (usingObject);
-				FireBullet ();
-			}
-            else
+                base.StartUsing(usingObject);
+                FireBullet();
+                cocked = false;
+            }
+            else if (cocked)
             {
                 audioSource.PlayOneShot(noAmmo);
+                cocked = false;
             }
         }
 
@@ -134,6 +138,13 @@
 
         protected virtual void Recoil() {
             
+        }
+
+        public virtual void EjectShell()
+        {
+            GameObject emptyBullet_clone;
+            emptyBullet_clone = Instantiate(emptyBullet, emptyBulletEjectPos.position, emptyBulletEjectPos.rotation);
+            emptyBullet_clone.GetComponent<Rigidbody>().AddRelativeForce(new Vector3(0.5f, 0.5f, 0) * 0.2f, ForceMode.Impulse);
         }
     }
 }
