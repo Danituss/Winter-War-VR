@@ -12,7 +12,15 @@ public class Resetscene : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKeyDown("space"))
-			SceneManager.LoadScene (SceneManager.GetActiveScene().buildIndex);	
+        if (Input.GetKeyDown("space"))
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+
+        if(Input.GetKeyDown(KeyCode.Keypad1)) {
+            SceneManager.LoadScene(0);
+        }
+        if (Input.GetKeyDown(KeyCode.Keypad2))
+        {
+            SceneManager.LoadScene(1);
+        }
 	}
 }
